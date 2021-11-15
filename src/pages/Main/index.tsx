@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SliderItem from '../../components/SliderItem';
 import 'swiper/swiper-bundle.min.css'
@@ -6,8 +6,24 @@ import 'swiper/swiper.min.css'
 
 import MainLayout from '../../layouts/Main';
 import Button from '../../components/Button';
+import { useNavigate } from 'react-router';
 
 const MainPage = (): JSX.Element => {
+	const navigate = useNavigate();
+	const [selected, setSelected] = useState<number>();
+
+	function getLabel() {
+		switch(selected) {
+			case 0:
+				return 'Вы выбрали: Здоровье человека';
+			case 1:
+				return 'Вы выбрали: Источники энергообеспечения города';
+			case 2:
+				return 'Вы выбрали: Среда доступных возможностей';
+			default:
+				return 'Вы пока не выбрали кейс';
+		}
+	}
 
 	return (
 		<MainLayout>
@@ -31,21 +47,40 @@ const MainPage = (): JSX.Element => {
 			<div className='w-screen mt-6'>
 				<Swiper slidesPerView={1.2} centeredSlides={true} spaceBetween={16} pagination={{ "clickable": true}}>
 					<SwiperSlide>
-						<SliderItem backgroundColor='bg-red-400' label='Здоровье человека' />
+						<SliderItem
+							backgroundColor='bg-red-400'
+							label='Здоровье человека'
+							onClick={() => setSelected(0)}
+							selected={selected === 0}
+						/>
 					</SwiperSlide>
 					<SwiperSlide>
-						<SliderItem backgroundColor='bg-blue-700' label='Источники энергообеспечения города' />
+						<SliderItem
+							backgroundColor='bg-blue-700'
+							label='Источники энергообеспечения города'
+							onClick={() => setSelected(1)}
+							selected={selected === 1}
+						/>
 					</SwiperSlide>
 					<SwiperSlide>
-						<SliderItem backgroundColor='bg-purple-500' label='Среда доступных возможностей' />
+						<SliderItem
+							backgroundColor='bg-purple-500' 
+							label='Среда доступных возможностей'
+							onClick={() => setSelected(2)}
+							selected={selected === 2}
+						/>
 					</SwiperSlide>
 				</Swiper>
 			</div>
 			<div className='px-4 mt-8'>
-				<Button variant='disabled' label='Вперед!'/>
+				<Button
+					variant={selected !== undefined ? 'enabled' : 'disabled'}
+					label='Вперед!'
+					onClick={() => navigate('/sources')}
+				/>
 			</div>
 			<p className='mt-3 text-sm text-gray-400 text-center'>
-				Вы пока не выбрали кейс
+				{getLabel()}
 			</p>
 		</MainLayout>
 	);
