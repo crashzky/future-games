@@ -56,7 +56,7 @@ const MainPage = (): JSX.Element => {
 					<Swiper slidesPerView={1.2} centeredSlides={true} spaceBetween={16} pagination={{ "clickable": true}}>
 						{availableCategories?.map((category, key) => {
 							return (
-								<SwiperSlide>
+								<SwiperSlide key={key}>
 									<SliderItem
 										backgroundColor={category.backgroundStyle}
 										label={category.value}

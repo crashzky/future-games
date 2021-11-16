@@ -23,6 +23,7 @@ const ContestItem = ({ currentNumber, count, answers, disabled, onClick, title, 
 			</h2>
 			<div className={styles['grid-columns'] + ` mt-6 grid gap-x-3 gap-y-5`}>
 				{answers.map((i, num) => (
+					// TODO each child in a list should have a unique "key" prop
 					<>
 						<button key={num + '_circle'} className='h-4' onClick={() => setSelected(num)}>
 							{selected === num ? (

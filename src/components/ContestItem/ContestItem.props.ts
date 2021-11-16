@@ -1,4 +1,5 @@
 import {DetailedHTMLProps, HTMLAttributes} from 'react';
+import {Answer} from "../../res/types/Answer";
 
 interface Props extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
 	currentNumber: number;
@@ -9,15 +10,6 @@ interface Props extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDi
 	disabled?: boolean;
 }
 
-interface Answer {
-	title: string;
-	description: string;
-	titleOnSelect: string;
-	descriptionOnSelect: string;
-}
-
 export default Props;
-export type {
-	Answer
-};
+
 

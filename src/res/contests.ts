@@ -1,4 +1,4 @@
-import {Contest} from "./Contest";
+import {Contest} from "./types/Contest";
 import stubAnswers from "./answers";
 
 export const contests: Contest[] = [

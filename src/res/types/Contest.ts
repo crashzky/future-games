@@ -1,4 +1,4 @@
-import {Answer} from "../components/ContestItem/ContestItem.props";
+import {Answer} from "./Answer";
 
 export interface Contest {
     title: string;
