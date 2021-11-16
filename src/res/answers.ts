@@ -1,6 +1,6 @@
-import { Answer } from '../../components/ContestItem/ContestItem.props';
+import {Answer} from "./types/Answer";
 
-const answers1: Answer[] = [
+const stubAnswers: Answer[] = [
 	{
 		title: 'Реакция на ухудшение здоровья',
 		description: `
@@ -37,4 +37,4 @@ const answers1: Answer[] = [
 	}
 ];
 
-export default answers1;
+export default stubAnswers;

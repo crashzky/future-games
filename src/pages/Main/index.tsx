@@ -1,34 +1,29 @@
-import { useState, useRef } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import {useRef, useState} from 'react';
+import {Swiper, SwiperSlide} from 'swiper/react';
 import SliderItem from '../../components/SliderItem';
 import 'swiper/swiper-bundle.min.css'
 import 'swiper/swiper.min.css'
-
 import MainLayout from '../../layouts/Main';
 import Button from '../../components/Button';
-import { useNavigate } from 'react-router';
+import {useNavigate} from 'react-router';
+import {availableCategories} from "../../res/categories";
 
 const MainPage = (): JSX.Element => {
 	const navigate = useNavigate();
 	const containerRef = useRef<HTMLDivElement>();
-	const [selected, setSelected] = useState<number>();
+	const [selectedIndex, setSelectedIndex] = useState<number>();
 
-	function getLabel() {
-		switch(selected) {
-			case 0:
-				return 'Вы выбрали: Здоровье человека';
-			case 1:
-				return 'Вы выбрали: Источники энергообеспечения города';
-			case 2:
-				return 'Вы выбрали: Среда доступных возможностей';
-			default:
-				return 'Вы пока не выбрали кейс';
-		}
+	const getCurrentCategoryLabel = (): string =>  {
+		if (selectedIndex === undefined || selectedIndex < 0 || selectedIndex > availableCategories.length)
+			return 'Вы пока не выбрали кейс';
+
+		return 'Вы выбрали: ' +  availableCategories[selectedIndex].value;
 	}
 
-	const onClick = (): void => {
+	const onClickNext = (): void => {
 		if(containerRef.current)
 			containerRef.current.className = 'transition-all opacity-0';
+
 		setTimeout(() =>  {
 			navigate('/sources');
 			window.scrollTo({
@@ -59,41 +54,29 @@ const MainPage = (): JSX.Element => {
 				</h2>
 				<div className='w-screen mt-6'>
 					<Swiper slidesPerView={1.2} centeredSlides={true} spaceBetween={16} pagination={{ "clickable": true}}>
-						<SwiperSlide>
-							<SliderItem
-								backgroundColor='bg-red-400'
-								label='Здоровье человека'
-								onClick={() => setSelected(0)}
-								selected={selected === 0}
-							/>
-						</SwiperSlide>
-						<SwiperSlide>
-							<SliderItem
-								backgroundColor='bg-blue-700'
-								label='Источники энергообеспечения города'
-								onClick={() => setSelected(1)}
-								selected={selected === 1}
-							/>
-						</SwiperSlide>
-						<SwiperSlide>
-							<SliderItem
-								backgroundColor='bg-purple-500' 
-								label='Среда доступных возможностей'
-								onClick={() => setSelected(2)}
-								selected={selected === 2}
-							/>
-						</SwiperSlide>
+						{availableCategories?.map((category, key) => {
+							return (
+								<SwiperSlide key={key}>
+									<SliderItem
+										backgroundColor={category.backgroundStyle}
+										label={category.value}
+										onClick={() => setSelectedIndex(key)}
+										selected={selectedIndex === key}
+									/>
+								</SwiperSlide>
+							);
+						})}
 					</Swiper>
 				</div>
 				<div className='px-4 mt-8'>
 					<Button
-						variant={selected !== undefined ? 'enabled' : 'disabled'}
+						variant={selectedIndex !== undefined ? 'enabled' : 'disabled'}
 						label='Вперед!'
-						onClick={onClick}
+						onClick={onClickNext}
 					/>
 				</div>
 				<p className='mt-3 text-sm text-gray-400 text-center'>
-					{getLabel()}
+					{getCurrentCategoryLabel()}
 				</p>
 			</div>
 		</MainLayout>

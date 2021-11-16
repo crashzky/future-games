@@ -1,11 +1,11 @@
-import { CheckCircle, Circle } from 'lucide-react';
+import {CheckCircle, Circle} from 'lucide-react';
 import Props from './ContestItem.props';
 
 import styles from './ContestItem.module.scss';
 import Button from '../Button';
-import { useState } from 'react';
+import {useState} from 'react';
 
-const ContestItem = ({ currentNumber, allNumber, answers, disabled, onClick, title, className = '', ...props }: Props): JSX.Element => {
+const ContestItem = ({ currentNumber, count, answers, disabled, onClick, title, className = '', ...props }: Props): JSX.Element => {
 	const [selected, setSelected] = useState<number>();
 	const [watchCheckMenu, setWatchCheckMenu] = useState(false);
 	const [clicked, setClicked] = useState(false);
@@ -16,13 +16,14 @@ const ContestItem = ({ currentNumber, allNumber, answers, disabled, onClick, tit
 				<div className={styles.disabled}></div>
 			)}
 			<p className='mt-4 text-center text-lg'>
-				{currentNumber + ' / ' + allNumber}
+				{currentNumber + ' / ' + count}
 			</p>
 			<h2 className='font-bold text-center mt-4 mx-4'>
 				{title}
 			</h2>
 			<div className={styles['grid-columns'] + ` mt-6 grid gap-x-3 gap-y-5`}>
 				{answers.map((i, num) => (
+					// TODO each child in a list should have a unique "key" prop
 					<>
 						<button key={num + '_circle'} className='h-4' onClick={() => setSelected(num)}>
 							{selected === num ? (

@@ -1,24 +1,21 @@
 import Props from './SliderItem.props';
 
 const SliderItem = ({ backgroundColor, label, selected, className = '', ...props }: Props): JSX.Element => {
-	function getBorder() {
-		if(selected)
-			return 'border-2 border-white';
-		else
-			return '';
+	const padding: number = 88;
+	const getBorderStyle = (): string => {
+		return selected ? 'border-2 border-white' : '';
 	}
 
 	return (
 		<button
 			style={{
-				width: window.innerWidth - 88,
-				height: window.innerWidth - 88,
+				width: window.innerWidth - padding,
+				height: window.innerWidth - padding,
 			}}
-			className={`${className} ${backgroundColor} ${getBorder()} flex items-end p-5`}
-			{...props}>
-			<p className='font-black text-2xl text-left'>
-				{label}
-			</p>
+			className={`${className} ${backgroundColor} ${getBorderStyle()} flex items-end p-5`}
+			{...props}
+		>
+			<p className='font-black text-2xl text-left'>{label}</p>
 		</button>
 	);
 };
