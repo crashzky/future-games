@@ -4,7 +4,7 @@ const SliderItem = ({ backgroundColor, label, selected, className = '', ...props
 	const padding: number = 88;
 	const getBorderStyle = (): string => {
 		return selected ? 'border-2 border-white' : '';
-	}
+	};
 
 	return (
 		<button
@@ -15,7 +15,9 @@ const SliderItem = ({ backgroundColor, label, selected, className = '', ...props
 			className={`${className} ${backgroundColor} ${getBorderStyle()} flex items-end p-5`}
 			{...props}
 		>
-			<p className='font-black text-2xl text-left'>{label}</p>
+			<p className='font-black text-2xl text-left'>
+				{label}
+			</p>
 		</button>
 	);
 };

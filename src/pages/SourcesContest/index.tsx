@@ -1,7 +1,7 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import ContestItem from '../../components/ContestItem';
 import ContestLayout from '../../layouts/Contest';
-import {contests} from "../../res/contests";
+import { contests } from '../../res/contests';
 
 const SourcesContestPage = (): JSX.Element => {
 	const [currentActive, setCurrentActive] = useState(0);
@@ -23,8 +23,7 @@ const SourcesContestPage = (): JSX.Element => {
 								behavior: 'smooth',
 							});
 						}}
-						disabled={currentActive < key}
-					/>
+						disabled={currentActive < key} />
 				);
 			})}
 		</ContestLayout>

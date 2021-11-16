@@ -1,5 +1,5 @@
-import {DetailedHTMLProps, HTMLAttributes} from 'react';
-import {Answer} from "../../res/types/Answer";
+import { DetailedHTMLProps, HTMLAttributes } from 'react';
+import { Answer } from '../../res/types/Answer';
 
 interface Props extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
 	currentNumber: number;
@@ -11,5 +11,3 @@ interface Props extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDi
 }
 
 export default Props;
-
-

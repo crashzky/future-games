@@ -1,4 +1,4 @@
-import {Answer} from "./Answer";
+import { Answer } from './Answer';
 
 export interface Contest {
     title: string;

@@ -1,4 +1,4 @@
-import {Answer} from "./types/Answer";
+import { Answer } from './types/Answer';
 
 const stubAnswers: Answer[] = [
 	{
@@ -11,7 +11,7 @@ const stubAnswers: Answer[] = [
 		titleOnSelect: 'Вы уверерны, что хотите полностью исключить стресс?',
 		descriptionOnSelect: `
 			Тогда в вашей жизни изменится то-то и то-то а исчезнет то-то и то-то а потом вы вообще станене счастливым
-		`
+		`,
 	},
 	{
 		title: 'Исключение фонового стресса',
@@ -22,7 +22,7 @@ const stubAnswers: Answer[] = [
 		titleOnSelect: 'Вы уверерны, что хотите полностью исключить стресс?',
 		descriptionOnSelect: `
 			Тогда в вашей жизни изменится то-то и то-то а исчезнет то-то и то-то а потом вы вообще станене счастливым
-		`
+		`,
 	},
 	{
 		title: 'Полное исключение стресса',
@@ -33,8 +33,8 @@ const stubAnswers: Answer[] = [
 		titleOnSelect: 'Вы уверерны, что хотите полностью исключить стресс?',
 		descriptionOnSelect: `
 			Тогда в вашей жизни изменится то-то и то-то а исчезнет то-то и то-то а потом вы вообще станене счастливым
-		`
-	}
+		`,
+	},
 ];
 
 export default stubAnswers;

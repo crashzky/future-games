@@ -1,30 +1,30 @@
-import {useRef, useState} from 'react';
-import {Swiper, SwiperSlide} from 'swiper/react';
+import { useRef, useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import SliderItem from '../../components/SliderItem';
-import 'swiper/swiper-bundle.min.css'
-import 'swiper/swiper.min.css'
+import 'swiper/swiper-bundle.min.css';
+import 'swiper/swiper.min.css';
 import MainLayout from '../../layouts/Main';
 import Button from '../../components/Button';
-import {useNavigate} from 'react-router';
-import {availableCategories} from "../../res/categories";
+import { useNavigate } from 'react-router';
+import { availableCategories } from '../../res/categories';
 
 const MainPage = (): JSX.Element => {
 	const navigate = useNavigate();
 	const containerRef = useRef<HTMLDivElement>();
 	const [selectedIndex, setSelectedIndex] = useState<number>();
 
-	const getCurrentCategoryLabel = (): string =>  {
+	const getCurrentCategoryLabel = (): string => {
 		if (selectedIndex === undefined || selectedIndex < 0 || selectedIndex > availableCategories.length)
 			return 'Вы пока не выбрали кейс';
 
-		return 'Вы выбрали: ' +  availableCategories[selectedIndex].value;
-	}
+		return 'Вы выбрали: ' + availableCategories[selectedIndex].value;
+	};
 
 	const onClickNext = (): void => {
 		if(containerRef.current)
 			containerRef.current.className = 'transition-all opacity-0';
 
-		setTimeout(() =>  {
+		setTimeout(() => {
 			navigate('/sources');
 			window.scrollTo({
 				top: 0,
@@ -53,7 +53,7 @@ const MainPage = (): JSX.Element => {
 					Выберите один из актуальных кейсов
 				</h2>
 				<div className='w-screen mt-6'>
-					<Swiper slidesPerView={1.2} centeredSlides={true} spaceBetween={16} pagination={{ "clickable": true}}>
+					<Swiper slidesPerView={1.2} centeredSlides={true} spaceBetween={16} pagination={{ 'clickable': true }}>
 						{availableCategories?.map((category, key) => {
 							return (
 								<SwiperSlide key={key}>
@@ -61,8 +61,7 @@ const MainPage = (): JSX.Element => {
 										backgroundColor={category.backgroundStyle}
 										label={category.value}
 										onClick={() => setSelectedIndex(key)}
-										selected={selectedIndex === key}
-									/>
+										selected={selectedIndex === key} />
 								</SwiperSlide>
 							);
 						})}
@@ -72,8 +71,7 @@ const MainPage = (): JSX.Element => {
 					<Button
 						variant={selectedIndex !== undefined ? 'enabled' : 'disabled'}
 						label='Вперед!'
-						onClick={onClickNext}
-					/>
+						onClick={onClickNext} />
 				</div>
 				<p className='mt-3 text-sm text-gray-400 text-center'>
 					{getCurrentCategoryLabel()}
