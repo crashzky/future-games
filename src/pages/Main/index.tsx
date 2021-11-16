@@ -23,6 +23,7 @@ const MainPage = (): JSX.Element => {
 	const onClickNext = (): void => {
 		if(containerRef.current)
 			containerRef.current.className = 'transition-all opacity-0';
+
 		setTimeout(() =>  {
 			navigate('/sources');
 			window.scrollTo({
@@ -53,7 +54,7 @@ const MainPage = (): JSX.Element => {
 				</h2>
 				<div className='w-screen mt-6'>
 					<Swiper slidesPerView={1.2} centeredSlides={true} spaceBetween={16} pagination={{ "clickable": true}}>
-						{availableCategories.map((category, key) => {
+						{availableCategories?.map((category, key) => {
 							return (
 								<SwiperSlide>
 									<SliderItem

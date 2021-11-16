@@ -2,7 +2,7 @@ import {DetailedHTMLProps, HTMLAttributes} from 'react';
 
 interface Props extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
 	currentNumber: number;
-	allNumber: number;
+	count: number;
 	title: string;
 	answers: Answer[];
 	onClick: () => void;

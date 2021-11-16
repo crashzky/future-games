@@ -5,7 +5,7 @@ import styles from './ContestItem.module.scss';
 import Button from '../Button';
 import {useState} from 'react';
 
-const ContestItem = ({ currentNumber, allNumber, answers, disabled, onClick, title, className = '', ...props }: Props): JSX.Element => {
+const ContestItem = ({ currentNumber, count, answers, disabled, onClick, title, className = '', ...props }: Props): JSX.Element => {
 	const [selected, setSelected] = useState<number>();
 	const [watchCheckMenu, setWatchCheckMenu] = useState(false);
 	const [clicked, setClicked] = useState(false);
@@ -16,7 +16,7 @@ const ContestItem = ({ currentNumber, allNumber, answers, disabled, onClick, tit
 				<div className={styles.disabled}></div>
 			)}
 			<p className='mt-4 text-center text-lg'>
-				{currentNumber + ' / ' + allNumber}
+				{currentNumber + ' / ' + count}
 			</p>
 			<h2 className='font-bold text-center mt-4 mx-4'>
 				{title}

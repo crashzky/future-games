@@ -1,34 +1,32 @@
 import {useState} from 'react';
 import ContestItem from '../../components/ContestItem';
 import ContestLayout from '../../layouts/Contest';
-import answers1 from './answers';
+import {contests} from "../../res/contests";
 
 const SourcesContestPage = (): JSX.Element => {
 	const [currentActive, setCurrentActive] = useState(0);
 
 	return (
 		<ContestLayout backgroundColor='bg-blue-700' label='Источники энергообеспечения города'>
-			<ContestItem
-				currentNumber={1}
-				allNumber={3}
-				title='Как проект будет учитывать влияние стресса на здоровье?'
-				answers={answers1}
-				onClick={() => {
-					setCurrentActive(1);
-					window.scrollBy({
-						top: 575,
-						behavior: 'smooth',
-					});
-				}}
-			/>
-			<ContestItem
-				currentNumber={2}
-				allNumber={3}
-				title='Как проект будет помогать человеку вводить новые привычки и закреплять новый образ жизни?'
-				answers={answers1}
-				onClick={() => setCurrentActive(2)}
-				disabled={currentActive < 1}
-			/>
+			{contests?.map((contest, key) => {
+				return (
+					<ContestItem
+						key={key}
+						currentNumber={key + 1}
+						count={contests.length}
+						title={contest.title}
+						answers={contest.answers}
+						onClick={() => {
+							setCurrentActive(key + 1);
+							window.scrollBy({
+								top: (contests.length - key - 1) * 575,
+								behavior: 'smooth',
+							});
+						}}
+						disabled={currentActive < key}
+					/>
+				);
+			})}
 		</ContestLayout>
 	);
 };
