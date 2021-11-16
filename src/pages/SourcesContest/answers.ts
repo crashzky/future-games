@@ -1,4 +1,4 @@
-import { Answer } from '../../components/ContestItem/ContestItem.props';
+import {Answer} from '../../components/ContestItem/ContestItem.props';
 
 const answers1: Answer[] = [
 	{

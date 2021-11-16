@@ -1,4 +1,4 @@
-import { Menu } from 'lucide-react';
+import {Menu} from 'lucide-react';
 
 const Header = (): JSX.Element => {
 	return (

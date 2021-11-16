@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import {useState} from 'react';
 import ContestItem from '../../components/ContestItem';
 import ContestLayout from '../../layouts/Contest';
 import answers1 from './answers';

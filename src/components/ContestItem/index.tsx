@@ -1,9 +1,9 @@
-import { CheckCircle, Circle } from 'lucide-react';
+import {CheckCircle, Circle} from 'lucide-react';
 import Props from './ContestItem.props';
 
 import styles from './ContestItem.module.scss';
 import Button from '../Button';
-import { useState } from 'react';
+import {useState} from 'react';
 
 const ContestItem = ({ currentNumber, allNumber, answers, disabled, onClick, title, className = '', ...props }: Props): JSX.Element => {
 	const [selected, setSelected] = useState<number>();

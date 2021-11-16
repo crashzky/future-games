@@ -1,12 +1,12 @@
-import { useState, useRef } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import {useRef, useState} from 'react';
+import {Swiper, SwiperSlide} from 'swiper/react';
 import SliderItem from '../../components/SliderItem';
 import 'swiper/swiper-bundle.min.css'
 import 'swiper/swiper.min.css'
 
 import MainLayout from '../../layouts/Main';
 import Button from '../../components/Button';
-import { useNavigate } from 'react-router';
+import {useNavigate} from 'react-router';
 
 const MainPage = (): JSX.Element => {
 	const navigate = useNavigate();
@@ -77,7 +77,7 @@ const MainPage = (): JSX.Element => {
 						</SwiperSlide>
 						<SwiperSlide>
 							<SliderItem
-								backgroundColor='bg-purple-500' 
+								backgroundColor='bg-purple-500'
 								label='Среда доступных возможностей'
 								onClick={() => setSelected(2)}
 								selected={selected === 2}
