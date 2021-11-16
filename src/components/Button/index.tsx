@@ -4,9 +4,9 @@ const Button = ({ label, variant, className = '', ...props }: Props): JSX.Elemen
 	function getStyles() {
 		switch(variant) {
 			case 'disabled':
-				return 'bg-gray-700 text-gray-500';
+				return 'bg-gray-700 text-gray-500 rounded-sm';
 			case 'enabled':
-				return 'bg-blue-700';
+				return 'bg-blue-700 rounded-sm';
 			case 'outlined':
 				return 'bg-black rounded-sm border-gray-200 border-2';
 		}
