@@ -1,7 +1,14 @@
 import Props from './SliderItem.props';
+import { useEffect, useState } from 'react';
 
 const SliderItem = ({ backgroundColor, label, selected, className = '', ...props }: Props): JSX.Element => {
 	const padding: number = 88;
+	const [windowWidth, setWindowWidth] = useState(padding);
+
+	useEffect(() => {
+		setWindowWidth(window.innerWidth);
+	}, []);
+
 	const getBorderStyle = (): string => {
 		return selected ? 'border-2 border-white' : '';
 	};
@@ -9,8 +16,8 @@ const SliderItem = ({ backgroundColor, label, selected, className = '', ...props
 	return (
 		<button
 			style={{
-				width: window.innerWidth - padding,
-				height: window.innerWidth - padding,
+				width: windowWidth - padding,
+				height: windowWidth - padding,
 			}}
 			className={`${className} ${backgroundColor} ${getBorderStyle()} flex items-end p-5`}
 			{...props}

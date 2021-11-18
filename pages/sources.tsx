@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import ContestItem from '../../components/ContestItem';
-import ContestLayout from '../../layouts/Contest';
-import { contests } from '../../res/contests';
+import ContestItem from '../components/ContestItem';
+import ContestLayout from '../layouts/Contest';
+import { contests } from '../shared/contests';
 
 const SourcesContestPage = (): JSX.Element => {
 	const [currentActive, setCurrentActive] = useState(0);

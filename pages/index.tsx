@@ -1,15 +1,15 @@
 import { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SliderItem from '../../components/SliderItem';
-import 'swiper/swiper-bundle.min.css';
-import 'swiper/swiper.min.css';
-import MainLayout from '../../layouts/Main';
-import Button from '../../components/Button';
-import { useNavigate } from 'react-router';
-import { availableCategories } from '../../res/categories';
+import SliderItem from '../components/SliderItem';
+//import 'swiper/swiper-bundle.min.css';
+//import 'swiper/swiper.min.css';
+import MainLayout from '../layouts/Main';
+import Button from '../components/Button';
+import { useRouter } from 'next/router';
+import { availableCategories } from '../shared/categories';
 
 const MainPage = (): JSX.Element => {
-	const navigate = useNavigate();
+	const router = useRouter();
 	const containerRef = useRef<HTMLDivElement>();
 	const [selectedIndex, setSelectedIndex] = useState<number>();
 
@@ -25,7 +25,7 @@ const MainPage = (): JSX.Element => {
 			containerRef.current.className = 'transition-all opacity-0';
 
 		setTimeout(() => {
-			navigate('/sources');
+			router.push('/sources');
 			window.scrollTo({
 				top: 0,
 			});

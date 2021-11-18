@@ -1,5 +1,5 @@
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
-import { Answer } from '../../res/types/Answer';
+import { Answer } from '../../shared/types/Answer';
 
 interface Props extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
 	currentNumber: number;
