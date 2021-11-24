@@ -5,7 +5,7 @@ import MainLayout from '../layouts/Main';
 import Button from '../components/Button';
 import { useRouter } from 'next/router';
 import { availableCategories } from '../shared/categories';
-import { useStore } from '../storage';
+import { useStore } from '../hooks/useStore';
 
 const MainPage = (): JSX.Element => {
 	const router = useRouter();

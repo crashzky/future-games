@@ -2,7 +2,7 @@ import { useState } from 'react';
 import ContestItem from '../components/ContestItem';
 import ContestLayout from '../layouts/Contest';
 import { contests } from '../shared/contests';
-import { useStore } from '../storage';
+import { useStore } from '../hooks/useStore';
 
 const SourcesContestPage = (): JSX.Element => {
 	const [currentActive, setCurrentActive] = useState(0);

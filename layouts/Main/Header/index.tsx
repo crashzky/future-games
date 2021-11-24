@@ -2,7 +2,7 @@ import { Menu } from 'lucide-react';
 
 const Header = (): JSX.Element => {
 	return (
-		<header className='flex sticky top-0 bg-black' style={{ zIndex: 100 }}>
+		<header className='flex sticky top-0 bg-black z-10'>
 			<button className='w-12 h-12 p-3'>
 				<Menu color='white' />
 			</button>

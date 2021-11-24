@@ -1,14 +1,7 @@
 import create from 'zustand';
-import { Category } from '../shared/types/Category';
+import IGameState from '../shared/types/GameState';
 
-type GameState = {
-	selectedCategory: Category,
-	selectCategory: (category: Category) => void,
-    selectedAnswers: Array<number>;
-    addAnswer: (index: number) => void
-}
-
-export const useStore = create<GameState>((set) => ({
+export const useStore = create<IGameState>((set) => ({
 	selectedAnswers: [],
 	selectedCategory: { backgroundStyle: undefined, value: undefined },
 	selectCategory: (category) => set({ selectedCategory: category }),
