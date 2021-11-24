@@ -1,23 +1,28 @@
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SliderItem from '../components/SliderItem';
-//import 'swiper/swiper-bundle.min.css';
-//import 'swiper/swiper.min.css';
 import MainLayout from '../layouts/Main';
 import Button from '../components/Button';
 import { useRouter } from 'next/router';
 import { availableCategories } from '../shared/categories';
+import { useStore } from '../storage';
 
 const MainPage = (): JSX.Element => {
 	const router = useRouter();
 	const containerRef = useRef<HTMLDivElement>();
-	const [selectedIndex, setSelectedIndex] = useState<number>();
+
+	const selectCategory = useStore((state) => state.selectCategory);
+	const selectedCategory = useStore((state) => state.selectedCategory);
+
+	const isCategorySelected = ():boolean => {
+		return selectedCategory && selectedCategory.value && selectedCategory.value.length > 0;
+	};
 
 	const getCurrentCategoryLabel = (): string => {
-		if (selectedIndex === undefined || selectedIndex < 0 || selectedIndex > availableCategories.length)
+		if (!isCategorySelected())
 			return 'Вы пока не выбрали кейс';
 
-		return 'Вы выбрали: ' + availableCategories[selectedIndex].value;
+		return 'Вы выбрали: ' + selectedCategory.value;
 	};
 
 	const onClickNext = (): void => {
@@ -60,8 +65,8 @@ const MainPage = (): JSX.Element => {
 									<SliderItem
 										backgroundColor={category.backgroundStyle}
 										label={category.value}
-										onClick={() => setSelectedIndex(key)}
-										selected={selectedIndex === key} />
+										onClick={() => selectCategory(category)}
+										selected={selectedCategory.value === category.value} />
 								</SwiperSlide>
 							);
 						})}
@@ -69,7 +74,7 @@ const MainPage = (): JSX.Element => {
 				</div>
 				<div className='px-4 mt-8'>
 					<Button
-						variant={selectedIndex !== undefined ? 'enabled' : 'disabled'}
+						variant={isCategorySelected() ? 'enabled' : 'disabled'}
 						label='Вперед!'
 						onClick={onClickNext} />
 				</div>

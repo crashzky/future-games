@@ -2,12 +2,14 @@ import { useState } from 'react';
 import ContestItem from '../components/ContestItem';
 import ContestLayout from '../layouts/Contest';
 import { contests } from '../shared/contests';
+import { useStore } from '../storage';
 
 const SourcesContestPage = (): JSX.Element => {
 	const [currentActive, setCurrentActive] = useState(0);
+	const selectedCategory = useStore((state) => state.selectedCategory);
 
 	return (
-		<ContestLayout backgroundColor='bg-blue-700' label='Источники энергообеспечения города'>
+		<ContestLayout backgroundColor={selectedCategory.backgroundStyle} label={selectedCategory.value}>
 			{contests?.map((contest, key) => {
 				return (
 					<ContestItem

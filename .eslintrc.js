@@ -25,7 +25,7 @@ module.exports = {
 			'ImportDeclaration': 1,
 		}],
 		'key-spacing': [2, { 'beforeColon': false, 'afterColon': true }],
-		'linebreak-style': [2, 'unix'],
+		'linebreak-style': [2, 'windows'],
 		'max-len': [2, { 'code': 130, 'ignoreComments': true }],
 		'no-mixed-spaces-and-tabs': [2, 'smart-tabs'],
 		'no-multi-spaces': 2,
