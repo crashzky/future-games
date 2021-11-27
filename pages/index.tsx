@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SliderItem from '../components/SliderItem';
 import MainLayout from '../layouts/Main';
@@ -13,6 +13,13 @@ const MainPage = (): JSX.Element => {
 
 	const selectCategory = useStore((state) => state.selectCategory);
 	const selectedCategory = useStore((state) => state.selectedCategory);
+	const [windowWidth, setWindowWidth] = useState(0);
+
+	const slidesPerView = windowWidth > 513 ? 1.12 : 1.2;
+
+	useEffect(() => {
+		setWindowWidth(window.innerWidth);
+	}, []);
 
 	const isCategorySelected = ():boolean => {
 		return selectedCategory && selectedCategory.value && selectedCategory.value.length > 0;
@@ -40,7 +47,7 @@ const MainPage = (): JSX.Element => {
 	return (
 		<MainLayout>
 			<div className='transition-all' ref={containerRef as any}>
-				<h1 className='font-bold text-2xl text-center mt-8'>
+				<h1 className='font-bold font-benzin text-2xl text-center mt-8'>
 					Игра-квест от кружкового движения
 				</h1>
 				<p className='px-4 mt-8 pt-0.5'>
@@ -58,7 +65,12 @@ const MainPage = (): JSX.Element => {
 					Выберите один из актуальных кейсов
 				</h2>
 				<div className='w-screen mt-6'>
-					<Swiper slidesPerView={1.2} centeredSlides={true} spaceBetween={16} pagination={{ 'clickable': true }}>
+					<Swiper
+						slidesPerView={slidesPerView}
+						centeredSlides={true}
+						spaceBetween={16}
+						pagination={{ 'clickable': true }}
+					>
 						{availableCategories?.map((category, key) => {
 							return (
 								<SwiperSlide key={key}>

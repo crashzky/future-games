@@ -8,7 +8,14 @@ module.exports = {
 	],
 	darkMode: false, // or 'media' or 'class'
 	theme: {
-		extend: {},
+		extend: {
+			screens: {
+				'md': '700px',
+			},
+			fontFamily: {
+				'benzin': '\'benzin\'',
+			},
+		},
 	},
 	variants: {
 		extend: {},
