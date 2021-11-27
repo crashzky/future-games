@@ -33,16 +33,18 @@ const MainPage = (): JSX.Element => {
 	};
 
 	const onClickNext = (): void => {
-		if(containerRef.current)
-			containerRef.current.className = 'opacity-0';
+		if(selectedCategory.value) {
+			if(containerRef.current)
+				containerRef.current.className = 'opacity-0';
 
-		setTimeout(() => {
-			router.push('/'
-				+ availableCategories[availableCategories.map((i) => i.link).indexOf((selectedCategory as any).link)].link);
-			window.scrollTo({
-				top: 0,
-			});
-		}, 300);
+			setTimeout(() => {
+				router.push('/'
+					+ availableCategories[availableCategories.map((i) => i.link).indexOf((selectedCategory as any).link)].link);
+				window.scrollTo({
+					top: 0,
+				});
+			}, 300);
+		}
 	};
 
 	return (
