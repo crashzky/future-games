@@ -1,19 +1,35 @@
 import { ArrowUp } from 'lucide-react';
+import Props from './Footer.props';
+import getFooterStyles from './Footer.styles';
 
-const Footer = (): JSX.Element => {
+const Footer = ({ variant }: Props): JSX.Element => {
 	return (
-		<div className='my-11'>
-			<p className='font-medium text-center'>
+		<div className={getFooterStyles(variant)}>
+			{/*Команда mobile*/}
+			<a
+				href='https://almanac.kruzhok.org/team'
+				className='block md:hidden font-bold text-center'
+			>
 				Команда
-			</p>
-			<p className='font-medium text-center mt-7'>
+			</a>
+			<a
+				href='https://kruzhok.org/'
+				className='block font-bold text-center mt-7'
+			>
 				©
 				{' ' + new Date(Date.now()).getFullYear() + ' '}
 				<span className='text-blue-600'>
 					Кружковое движение
 				</span>
-			</p>
-			<a className='font-medium mt-6 text-center block' href='#topBlock'>
+			</a>
+			{/*Команда desktop*/}
+			<a
+				href='https://almanac.kruzhok.org/team'
+				className='hidden md:mt-7 md:block font-bold text-center'
+			>
+				Команда
+			</a>
+			<a className='font-bold mt-6 text-center block' href='#topBlock'>
 				Перейти в начало страницы
 				{' '}
 				<ArrowUp color='white' className='inline' />

@@ -15,6 +15,12 @@ module.exports = {
 			fontFamily: {
 				'benzin': '\'benzin\'',
 			},
+			width: {
+				'px-700': '700px',
+			},
+			borderRadius: {
+				'4xl': '2rem',
+			},
 		},
 	},
 	variants: {

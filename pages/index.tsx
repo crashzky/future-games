@@ -34,37 +34,43 @@ const MainPage = (): JSX.Element => {
 
 	const onClickNext = (): void => {
 		if(containerRef.current)
-			containerRef.current.className = 'transition-all opacity-0';
+			containerRef.current.className = 'opacity-0';
 
 		setTimeout(() => {
 			router.push('/sources');
 			window.scrollTo({
 				top: 0,
 			});
-		}, 150);
+		}, 300);
 	};
 
 	return (
 		<MainLayout>
-			<div className='transition-all' ref={containerRef as any}>
-				<h1 className='font-bold font-benzin text-2xl text-center mt-8'>
+			<div
+				className='transition-all md:duration-300 bg-black md:w-px-700 mx-auto rounded-3xl md:p-16 md:mt-14'
+				ref={containerRef as any}
+			>
+				<h1 className='font-bold font-benzin text-2xl text-center mt-8 md:mt-0'>
 					Игра-квест от кружкового движения
 				</h1>
-				<p className='px-4 mt-8 pt-0.5'>
-					Мы в практиках будущего каждый день занимаемся решением проблем.
-				</p>
-				<p className='px-4 mt-4'>
-					Пройдите наш тест и попробуйте решить одну из таких проблем!
-					Тут надо сказать что-то еще, потому что игра настолько крутая, что нужно говорить
-					очень много и по делу! Так что давайте представим, что тут я написал, ок?
-				</p>
-				<p className='px-4 mt-4'>
-					(тесты можно проходить несколько раз)
-				</p>
-				<h2 className='mt-12 pt-0.5 px-4 font-black text-2xl'>
-					Выберите один из актуальных кейсов
-				</h2>
-				<div className='w-screen mt-6'>
+				<div className='px-4 md:px-0'>
+					<p className='mt-8 pt-0.5'>
+						Мы в практиках будущего каждый день занимаемся решением проблем.
+					</p>
+					<p className='mt-4'>
+						Пройдите наш тест и попробуйте решить одну из таких проблем!
+						Тут надо сказать что-то еще, потому что игра настолько крутая, что нужно говорить
+						очень много и по делу! Так что давайте представим, что тут я написал, ок?
+					</p>
+					<p className='mt-4'>
+						(тесты можно проходить несколько раз)
+					</p>
+					<h2 className='mt-12 pt-0.5 font-black text-2xl'>
+						Выберите один из актуальных кейсов
+					</h2>
+				</div>
+				{/*Mobile slider*/}
+				<div className='w-screen mt-6 md:hidden'>
 					<Swiper
 						slidesPerView={slidesPerView}
 						centeredSlides={true}
@@ -83,6 +89,21 @@ const MainPage = (): JSX.Element => {
 							);
 						})}
 					</Swiper>
+				</div>
+				{/*Desktop slider*/}
+				<div className='hidden mt-6 md:grid grid-cols-2 gap-3'>
+					{availableCategories?.map((category, key) => {
+						return (
+							<SliderItem
+								width={280}
+								height={280}
+								key={key}
+								backgroundColor={category.backgroundStyle}
+								label={category.value}
+								onClick={() => selectCategory(category)}
+								selected={selectedCategory.value === category.value} />
+						);
+					})}
 				</div>
 				<div className='px-4 mt-8'>
 					<Button
