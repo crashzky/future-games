@@ -37,7 +37,8 @@ const MainPage = (): JSX.Element => {
 			containerRef.current.className = 'opacity-0';
 
 		setTimeout(() => {
-			router.push('/sources');
+			router.push('/'
+				+ availableCategories[availableCategories.map((i) => i.link).indexOf((selectedCategory as any).link)].link);
 			window.scrollTo({
 				top: 0,
 			});
