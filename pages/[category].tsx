@@ -7,6 +7,7 @@ import { availableCategories } from '../shared/categories';
 const SourcesContestPage = ({ category }: Props): JSX.Element => {
 	const [currentActive, setCurrentActive] = useState(0);
 	const selectedCategory = availableCategories[availableCategories.map((i) => i.link).indexOf(category)];
+	const blockHeight = 300;
 
 	return (
 		<ContestLayout backgroundColor={selectedCategory.backgroundStyle} label={selectedCategory.value}>
@@ -18,13 +19,12 @@ const SourcesContestPage = ({ category }: Props): JSX.Element => {
 							key={key}
 							currentNumber={key + 1}
 							count={quiz.length}
-							title={question.title}
-							answers={question.answers}
+							question={question}
 							onClick={() => {
 								setCurrentActive(key + 1);
 								window.scrollBy({
-									// TODO fix calculating scroll on PC
-									top: (quiz.length - key - 1) * 575,
+									// TODO fix calculating scroll. Text height may be different
+									top: (quiz.length - key - 1) * blockHeight,
 									behavior: 'smooth',
 								});
 							}}
