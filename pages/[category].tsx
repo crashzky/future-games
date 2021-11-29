@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import ContestItem from '../components/ContestItem';
 import ContestLayout from '../layouts/Contest';
-import { contests } from '../shared/contests';
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
 import { availableCategories } from '../shared/categories';
 
@@ -12,18 +11,20 @@ const SourcesContestPage = ({ category }: Props): JSX.Element => {
 	return (
 		<ContestLayout backgroundColor={selectedCategory.backgroundStyle} label={selectedCategory.value}>
 			<div>
-				{contests?.map((contest, key) => {
+				{selectedCategory?.quiz?.map((question, key) => {
+					const quiz = selectedCategory.quiz;
 					return (
 						<ContestItem
 							key={key}
 							currentNumber={key + 1}
-							count={contests.length}
-							title={contest.title}
-							answers={contest.answers}
+							count={quiz.length}
+							title={question.title}
+							answers={question.answers}
 							onClick={() => {
 								setCurrentActive(key + 1);
 								window.scrollBy({
-									top: (contests.length - key - 1) * 575,
+									// TODO fix calculating scroll on PC
+									top: (quiz.length - key - 1) * 575,
 									behavior: 'smooth',
 								});
 							}}
@@ -44,7 +45,7 @@ export default SourcesContestPage;
 export const getStaticPaths: GetStaticPaths = async () => {
 	return {
 		paths: availableCategories.map((i) => ({
-			params: { 
+			params: {
 				category: i.link,
 			},
 		})),

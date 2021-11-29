@@ -1,5 +1,4 @@
 import create from 'zustand';
-import IGameState from '../shared/types/GameState';
 
 export const useStore = create((set: any) => ({
 	selectedAnswers: [],

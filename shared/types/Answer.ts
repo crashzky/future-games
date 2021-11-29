@@ -1,6 +1,7 @@
 export interface Answer {
+    id: number;
     title: string;
     description: string;
     titleOnSelect: string;
-    descriptionOnSelect: string;
+    objection: string; // description on select
 }

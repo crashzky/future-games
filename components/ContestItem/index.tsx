@@ -58,7 +58,7 @@ const ContestItem = ({
 						{answers[selected].titleOnSelect}
 					</h3>
 					<p className='text-sm text-center mt-2'>
-						{answers[selected].descriptionOnSelect}
+						{answers[selected].objection}
 					</p>
 					<div className='grid grid-cols-2 gap-4 mt-7'>
 						<Button
