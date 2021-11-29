@@ -1,6 +1,6 @@
 import { CheckCircle, Circle } from 'lucide-react';
 import Props from './ContestItem.props';
-
+import React from 'react';
 import styles from './ContestItem.module.scss';
 import Button from '../Button';
 import { useState } from 'react';
@@ -15,7 +15,7 @@ const ContestItem = ({
 	className = '',
 	...props
 }: Props): JSX.Element => {
-	const [selected, setSelected] = useState<number>();
+	const [selectedIndex, setSelectedIndex] = useState<number>();
 	const [watchCheckMenu, setWatchCheckMenu] = useState(false);
 	const [clicked, setClicked] = useState(false);
 	const updateAnswers = useStore((state) => state.updateAnswers);
@@ -25,7 +25,7 @@ const ContestItem = ({
 			questionId: question.id,
 			answerId: index,
 		});
-		setSelected(index);
+		setSelectedIndex(index);
 	};
 
 	return (
@@ -41,10 +41,9 @@ const ContestItem = ({
 			</h2>
 			<div className={styles['grid-columns'] + ' mt-6 grid gap-x-3 gap-y-5'}>
 				{question.answers.map((i, num) => (
-					// TODO each child in a list should have a unique "key" prop
-					<>
+					<React.Fragment key={num}>
 						<button key={num + '_circle'} className='h-4' onClick={() => onItemPress(num)}>
-							{selected === num ? (
+							{selectedIndex === num ? (
 								<CheckCircle color='white' size={16} />
 							) : (
 								<Circle color='white' size={16} />
@@ -58,16 +57,16 @@ const ContestItem = ({
 								{i.description}
 							</p>
 						</button>
-					</>
+					</React.Fragment>
 				))}
 			</div>
-			{watchCheckMenu && selected !== undefined ? (
+			{watchCheckMenu && selectedIndex !== undefined ? (
 				<>
 					<h3 className='font-bold text-center mt-11'>
-						{question.answers[selected].titleOnSelect}
+						{question.answers[selectedIndex].titleOnSelect}
 					</h3>
 					<p className='text-sm text-center mt-2'>
-						{question.answers[selected].objection}
+						{question.answers[selectedIndex].objection}
 					</p>
 					<div className='grid grid-cols-2 gap-4 mt-7'>
 						<Button
@@ -95,7 +94,7 @@ const ContestItem = ({
 				<Button
 					className='mt-11'
 					label='Подтвердить'
-					variant={selected !== undefined ? 'enabled' : 'disabled'}
+					variant={selectedIndex !== undefined ? 'enabled' : 'disabled'}
 					onClick={() => {
 						setWatchCheckMenu(true);
 						window.scrollBy({

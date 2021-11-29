@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import ContestItem from '../components/ContestItem';
 import ContestLayout from '../layouts/Contest';
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
@@ -7,7 +7,7 @@ import { availableCategories } from '../shared/categories';
 const SourcesContestPage = ({ category }: Props): JSX.Element => {
 	const [currentActive, setCurrentActive] = useState(0);
 	const selectedCategory = availableCategories[availableCategories.map((i) => i.link).indexOf(category)];
-	const blockHeight = 300;
+	const blockHeight = 200;
 
 	return (
 		<ContestLayout backgroundColor={selectedCategory.backgroundStyle} label={selectedCategory.value}>
@@ -23,7 +23,7 @@ const SourcesContestPage = ({ category }: Props): JSX.Element => {
 							onClick={() => {
 								setCurrentActive(key + 1);
 								window.scrollBy({
-									// TODO fix calculating scroll. Text height may be different
+									// TODO fix scrolling. Use refs
 									top: (quiz.length - key - 1) * blockHeight,
 									behavior: 'smooth',
 								});
