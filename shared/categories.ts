@@ -8,23 +8,51 @@ export const availableCategories: Category[] = [
 		value: 'Здоровье человека',
 		backgroundStyle: 'bg-red-400',
 		quiz: stubQuestions,
+		results: [
+			{
+				combination: [0, 0, 0],
+				header: 'TODO',
+				description: 'TOOD',
+			},
+		],
 	},
 	{
 		link: 'sources',
 		value: 'Источники энергообеспечения города',
 		backgroundStyle: 'bg-blue-700',
 		quiz: stubQuestions,
+		results: [
+			{
+				combination: [0, 0, 0],
+				header: 'TODO',
+				description: 'TOOD',
+			},
+		],
 	},
 	{
 		link: 'inclusive',
 		value: 'Среда доступных возможностей',
 		backgroundStyle: 'bg-purple-500',
 		quiz: stubQuestions,
+		results: [
+			{
+				combination: [0, 0, 0],
+				header: 'TODO',
+				description: 'TOOD',
+			},
+		],
 	},
 	{
 		link: 'happiness_and_health',
 		value: 'Счастье и здоровье человека',
 		backgroundStyle: 'bg-red-500',
 		quiz: HappinessAndHealth,
+		results: [
+			{
+				combination: [0, 0, 0],
+				header: 'TODO',
+				description: 'TOOD',
+			},
+		],
 	},
 ];
