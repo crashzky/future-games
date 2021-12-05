@@ -1,40 +1,36 @@
-import { ArrowUp } from 'lucide-react';
 import Props from './Footer.props';
 import getFooterStyles from './Footer.styles';
 
 const Footer = ({ variant }: Props): JSX.Element => {
 	return (
-		<div className={getFooterStyles(variant)}>
+		<footer className={getFooterStyles(variant)}>
 			{/*Команда mobile*/}
 			<a
-				href='https://almanac.kruzhok.org/team'
-				className='block md:hidden font-bold text-center'
+				href='#'
+				className='block md:hidden font-bold font-benzin underline text-center'
 			>
-				Команда
+				О проекте
 			</a>
-			<a
-				href='https://kruzhok.org/'
-				className='block font-bold text-center mt-7'
-			>
-				©
-				{' ' + new Date(Date.now()).getFullYear() + ' '}
-				<span className='text-blue-600'>
-					Кружковое движение
-				</span>
+			<a href='https://kruzhok.org'>
+				<img
+					src='/kruzhok.png'
+					alt='Kruzhok'
+					className='mx-auto scale-60 md:scale-100 my-6 md:my-10' />
 			</a>
 			{/*Команда desktop*/}
 			<a
-				href='https://almanac.kruzhok.org/team'
-				className='hidden md:mt-7 md:block font-bold text-center'
+				href='#'
+				className='hidden md:my-12 md:block font-bold font-benzin text-2xl underline text-center'
 			>
-				Команда
+				О проекте
 			</a>
-			<a className='font-bold mt-6 text-center block' href='#topBlock'>
-				Перейти в начало страницы
-				{' '}
-				<ArrowUp color='white' className='inline' />
+			<a href='https://президентскиегранты.рф'>
+				<img
+					src='/fund_grants.png'
+					alt='Founf grants'
+					className='mx-auto scale-70 md:scale-100 mb-6 md:my-8 block' />
 			</a>
-		</div>
+		</footer>
 	);
 };
 
