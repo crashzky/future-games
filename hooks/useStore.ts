@@ -2,30 +2,7 @@ import create from 'zustand';
 import { Category } from '../shared/types/Category';
 import { SelectedAnswer } from '../shared/types/SelectedAnswers';
 import IGameState from '../shared/types/GameState';
-
-const areArraysSame = (a: any[], b: any[]) => {
-	if (a?.length !== b?.length)
-		return false;
-
-	for (let i=0; i<a.length; i++){
-		if (a[i] !== b[i])
-			return false;
-	}
-	return true;
-};
-
-const matchAnswers = (selectedAnswers: SelectedAnswer[], category: Category) => {
-	const answers = selectedAnswers.map((item) => item.answerId);
-	const availableResults = category.results;
-
-	for(let i=0; i<availableResults.length; i++){
-		const result = availableResults[i];
-		if (areArraysSame(answers, result.combination))
-			return result;
-	}
-
-	return undefined;
-};
+import { matchAnswers } from '../shared/utils';
 
 export const useStore = create<IGameState>((set) => ({
 	selectedAnswers: [],
@@ -52,7 +29,8 @@ export const useStore = create<IGameState>((set) => ({
 		const category = state.selectedCategory;
 		let result = {};
 		if (answers.length === category.quiz?.length){
-			result = matchAnswers(answers, category);
+			const answersId = selectedAnswers.map((item) => item.answerId);
+			result = matchAnswers(answersId, category);
 			if (!result) {
 				// TODO answers not matched, handle error!
 			}

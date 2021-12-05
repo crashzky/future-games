@@ -49,9 +49,14 @@ export const availableCategories: Category[] = [
 		quiz: HappinessAndHealth,
 		results: [
 			{
-				combination: [0, 0, 0],
-				header: 'TODO',
-				description: 'TOOD',
+				combination: [1, 0, 0],
+				header: 'Комбо 1!',
+				description: 'Крутое описание',
+			},
+			{
+				combination: [2, 0, 0],
+				header: 'Комбо 2!',
+				description: 'Крутое описание (еще круче)',
 			},
 		],
 	},
