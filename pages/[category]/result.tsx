@@ -5,14 +5,13 @@ import { availableCategories } from '../../shared/categories';
 import { FacebookShareButton, TelegramShareButton, VKShareButton } from 'react-share';
 import { useRouter } from 'next/router';
 import { Result } from '../../shared/types/Result';
-import { matchAnswers } from '../../shared/utils';
 import { Category } from '../../shared/types/Category';
 
 const ContestResultPage = ({ category }: Props): JSX.Element => {
 	const { query } = useRouter();
 	const selectedCategory: Category = availableCategories[availableCategories.map((i) => i.link).indexOf(category)];
-	const answers: number[] = query.answers ? JSON.parse(query?.answers as string) : [];
-	const result: Result = matchAnswers(answers, selectedCategory);
+	const resultId = query?.id;
+	const result: Result = selectedCategory.results.find((res) => res.id.toString() === resultId);
 
 	return (
 		<ContestLayout backgroundColor={selectedCategory.backgroundStyle} label={selectedCategory.value}>

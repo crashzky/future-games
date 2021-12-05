@@ -25,18 +25,20 @@ export const useStore = create<IGameState>((set) => ({
 		if (!isAnswerHandled)
 			answers.push(selectedAnswer);
 
-		// Calculate result if all answers received, to improve performance
 		const category = state.selectedCategory;
-		let result = {};
+		let result = undefined;
+
+		// Calculate result if all answers received, to improve performance
 		if (answers.length === category.quiz?.length){
-			const answersId = selectedAnswers.map((item) => item.answerId);
+			const answersId = answers.map((item) => item.answerId);
 			result = matchAnswers(answersId, category);
 			if (!result) {
-				// TODO answers not matched, handle error!
+				// TODO Answers not matched. handle error
+				// Now result page simplify won't be shown.
 			}
 		}
 
-		return { selectedAnswers: answers, ...result };
+		return { selectedAnswers: answers, currentResult: result };
 	}),
 }));
 

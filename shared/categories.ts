@@ -10,6 +10,7 @@ export const availableCategories: Category[] = [
 		quiz: stubQuestions,
 		results: [
 			{
+				id: 1,
 				combination: [0, 0, 0],
 				header: 'TODO',
 				description: 'TOOD',
@@ -23,6 +24,7 @@ export const availableCategories: Category[] = [
 		quiz: stubQuestions,
 		results: [
 			{
+				id: 1,
 				combination: [0, 0, 0],
 				header: 'TODO',
 				description: 'TOOD',
@@ -36,6 +38,7 @@ export const availableCategories: Category[] = [
 		quiz: stubQuestions,
 		results: [
 			{
+				id: 1,
 				combination: [0, 0, 0],
 				header: 'TODO',
 				description: 'TOOD',
@@ -49,11 +52,19 @@ export const availableCategories: Category[] = [
 		quiz: HappinessAndHealth,
 		results: [
 			{
+				id: 1,
+				combination: [0, 0, 0],
+				header: '!',
+				description: 'Все первые ответы',
+			},
+			{
+				id: 2,
 				combination: [1, 0, 0],
 				header: 'Комбо 1!',
 				description: 'Крутое описание',
 			},
 			{
+				id: 3,
 				combination: [2, 0, 0],
 				header: 'Комбо 2!',
 				description: 'Крутое описание (еще круче)',
