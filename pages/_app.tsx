@@ -6,7 +6,7 @@ const MyApp = ({ Component, pageProps }: Props): JSX.Element => {
 		<div>
 			<Head>
 				<title>
-					KD GAME
+					Игра-квест от кружкового движения
 				</title>
 			</Head>
 			<Component {...pageProps} />

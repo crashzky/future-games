@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import ContestItem from '../components/ContestItem';
-import ContestLayout from '../layouts/Contest';
+import ContestItem from '../../components/ContestItem';
+import ContestLayout from '../../layouts/Contest';
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
-import { availableCategories } from '../shared/categories';
+import { availableCategories } from '../../shared/categories';
 
-const SourcesContestPage = ({ category }: Props): JSX.Element => {
+const ContestPage = ({ category }: Props): JSX.Element => {
 	const [currentActive, setCurrentActive] = useState(0);
 	const selectedCategory = availableCategories[availableCategories.map((i) => i.link).indexOf(category)];
 	const blockHeight = 200;
@@ -40,7 +40,7 @@ interface Props {
 	category: string;
 }
 
-export default SourcesContestPage;
+export default ContestPage;
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	return {
