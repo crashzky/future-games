@@ -18,12 +18,20 @@ const Footer = ({ variant }: Props): JSX.Element => {
 					className='mx-auto scale-60 md:scale-100 my-6 md:my-10' />
 			</a>
 			{/*Команда desktop*/}
-			<a
-				href='#'
-				className='hidden md:my-12 md:block font-bold font-benzin text-2xl underline text-center'
-			>
-				О проекте
-			</a>
+			<div>
+				<a
+					href='#'
+					className='hidden md:block md:mt-8 md:mb-2 font-bold font-benzin text-2xl underline text-center'
+				>
+					О проекте
+				</a>
+				<a
+					href='https://almanac.kruzhok.org/'
+					className='hidden md:block font-semibold text-custom-blue'
+				>
+					Альманах практик будущего
+				</a>
+			</div>
 			<a href='https://президентскиегранты.рф'>
 				<img
 					src='/fund_grants.png'

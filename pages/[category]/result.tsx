@@ -2,13 +2,14 @@ import React from 'react';
 import ContestLayout from '../../layouts/Contest';
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
 import { availableCategories } from '../../shared/categories';
-import { FacebookShareButton, TelegramShareButton, VKShareButton } from 'react-share';
+import { FacebookShareButton, TelegramShareButton, TwitterShareButton, VKShareButton } from 'react-share';
 import { useRouter } from 'next/router';
 import { Result } from '../../shared/types/Result';
 import { Category } from '../../shared/types/Category';
+import Button from '../../components/Button';
 
 const ContestResultPage = ({ category }: Props): JSX.Element => {
-	const { query } = useRouter();
+	const { query, push } = useRouter();
 	const selectedCategory: Category = availableCategories[availableCategories.map((i) => i.link).indexOf(category)];
 	const resultId = query?.id;
 	const result: Result = selectedCategory.results.find((res) => res.id.toString() === resultId);
@@ -29,7 +30,11 @@ const ContestResultPage = ({ category }: Props): JSX.Element => {
 					<p className='md:text-xl mt-6'>
 						{result.description}
 					</p>
-					<p className='mt-12 text-center md:text-xl'>
+					<div className='mt-8 grid grid-cols-2 gap-4'>
+						<Button label='Переиграть' variant='outlined' onClick={() => push('/' + selectedCategory.link)} />
+						<Button label='Выбрать другой кейс' variant='enabled' onClick={() => push('/')} />
+					</div>
+					<p className='mt-8 text-center md:text-xl'>
 						Подедиться в соцсетях:
 					</p>
 					<div className='w-fit mt-3 mx-auto'>
@@ -45,6 +50,12 @@ const ContestResultPage = ({ category }: Props): JSX.Element => {
 						>
 							<img src='/facebook.svg' className='mr-6' alt='facebook' />
 						</FacebookShareButton>
+						<TwitterShareButton
+							title='Игра-квест от кружкового движения'
+							url='https://future-games.online/'
+						>
+							<img src='/twitter.svg' className='mr-6' alt='facebook' />
+						</TwitterShareButton>
 						<TelegramShareButton
 							title='Игра-квест от кружкового движения'
 							url='https://future-games.online/'

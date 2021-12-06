@@ -22,6 +22,9 @@ module.exports = {
 			borderRadius: {
 				'4xl': '2rem',
 			},
+			colors: {
+				'custom-blue': '#2C5EF6',
+			},
 		},
 		scale: {
 			'0': '0',

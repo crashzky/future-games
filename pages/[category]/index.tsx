@@ -43,6 +43,18 @@ const ContestPage = ({ category }: Props): JSX.Element => {
 
 	return (
 		<ContestLayout backgroundColor={selectedCategoryFromLink.backgroundStyle} label={selectedCategoryFromLink.value}>
+			<div className='grid grid-flow-col'>
+				<img src='/arrow.svg' alt='arrow' />
+				<h1 className='text-2xl inline-block w-96 text-center'>
+					Источники энергообеспечения города
+				</h1>
+			</div>
+			<p className='text-xl mt-6'>
+				{selectedCategoryFromLink.description}
+			</p>
+			<p className='text-xl mt-5'>
+				{selectedCategoryFromLink.idea}
+			</p>
 			<div>
 				{selectedCategoryFromLink?.quiz?.map((question, key) => {
 					const quiz = selectedCategoryFromLink.quiz;
