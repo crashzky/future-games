@@ -1,6 +1,9 @@
+/* eslint-disable max-len */
 import { Category } from './types/Category';
 import { stubQuestions } from './questions/Stub';
 import { HappinessAndHealth } from './questions/HappinessAndHealth';
+import { CareAboutOlderGeneration } from './questions/CareAboutOlderGeneration';
+import { WorkDivision } from './questions/WorkDivision';
 
 export const availableCategories: Category[] = [
 	{
@@ -17,7 +20,7 @@ export const availableCategories: Category[] = [
 		results: [
 			{
 				id: 1,
-				combination: [0, 0, 0],
+				combination: [-1, -1, -1],
 				header: 'TODO',
 				description: 'TOOD',
 			},
@@ -37,7 +40,7 @@ export const availableCategories: Category[] = [
 		results: [
 			{
 				id: 1,
-				combination: [0, 0, 0],
+				combination: [-1, -1, -1],
 				header: 'TODO',
 				description: 'TOOD',
 			},
@@ -57,7 +60,7 @@ export const availableCategories: Category[] = [
 		results: [
 			{
 				id: 1,
-				combination: [0, 0, 0],
+				combination: [-1, -1, -1],
 				header: 'TODO',
 				description: 'TOOD',
 			},
@@ -77,21 +80,41 @@ export const availableCategories: Category[] = [
 		results: [
 			{
 				id: 1,
-				combination: [0, 0, 0],
-				header: '!',
-				description: 'Все первые ответы',
+				combination: [-1, -1, -1],
+				header: 'TODO',
+				description: 'TOOD',
 			},
+		],
+	},
+	{
+		link: 'care_about_older_generation',
+		value: 'Забота о старшем поколении',
+		description: 'Продолжительность жизни растет, население стареет. Людям старшего возраста сложно жить полной и интересной жизнью: трудно заниматься любимым делом и встречаться с дорогими людьми, потому что становится меньше сил, тяжело передвигаться, слышать, читать и вообще усваивать новую информацию. К 2030 году больше 30% населения будет старше 65 лет. А научных открытий в области медицины, которые могли бы уменьшить возрастные изменения, к этому времени не предвидится.',
+		idea: 'Реализуйте проект, который будет удовлетворять особые потребности пожилых людей и обеспечивать им полноту жизни.',
+		backgroundStyle: 'bg-blue-500',
+		quiz: CareAboutOlderGeneration,
+		results: [
 			{
-				id: 2,
-				combination: [1, 0, 0],
-				header: 'Комбо 1!',
-				description: 'Крутое описание',
+				id: 1,
+				combination: [-1, -1, -1],
+				header: 'TODO',
+				description: 'TOOD',
 			},
+		],
+	},
+	{
+		link: 'work_division',
+		value: 'Разделение труда между людьми и роботами',
+		description: 'Развитие технологий в области искусственного интеллекта и робототехники позволяют автоматизировать существенную часть работ, которые сейчас делает человек. При этом вопрос внедрения этих технологий в существующие рабочие и социальные процессы остается неразрешенным.Технологии могут как оказывать людям поддержку при решении сложных задач, так и лишить их возможности выбора и реализации творческого потенциала. То, как изменится жизнь людей, зависит от того, как компании подойдут к внедрению технологий автоматизации рабочих процессов.',
+		idea: 'Разработайте программу внедрения технологий автоматизации рабочих задач на основе искусственного интеллекта и робототехники, которая станет руководством для компаний и организаций города по преобразованию рабочей жизни жителей города.',
+		backgroundStyle: 'bg-red-500',
+		quiz: WorkDivision,
+		results: [
 			{
-				id: 3,
-				combination: [2, 0, 0],
-				header: 'Комбо 2!',
-				description: 'Крутое описание (еще круче)',
+				id: 1,
+				combination: [-1, -1, -1],
+				header: 'TODO',
+				description: 'TOOD',
 			},
 		],
 	},
