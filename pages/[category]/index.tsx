@@ -46,7 +46,7 @@ const ContestPage = ({ category }: Props): JSX.Element => {
 			<div className='grid grid-flow-col'>
 				<img src='/arrow.svg' alt='arrow' />
 				<h1 className='text-2xl inline-block w-96 text-center'>
-					Источники энергообеспечения города
+					{selectedCategoryFromLink.value}
 				</h1>
 			</div>
 			<p className='text-xl mt-6'>
