@@ -17,8 +17,11 @@ export const matchAnswers = (answers: number[], category: Category): Result => {
 
 	for(let i=0; i<availableResults.length; i++){
 		const result = availableResults[i];
-		if (areArraysSame(answers, result.combination))
-			return result;
+		const combinations = result.combinations;
+		for (let j=0; j<combinations.length; j++) {
+			if (areArraysSame(answers, combinations[j]))
+				return result;
+		}
 	}
 
 	return undefined;

@@ -1,7 +1,7 @@
 
 export interface Result {
     id: number,
-    combination: number[]
+    combinations: number[][]
     header: string,
     description: string,
 }

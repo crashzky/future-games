@@ -23,9 +23,9 @@ export const availableCategories: Category[] = [
 		results: [
 			{
 				id: 1,
-				combination: [-1, -1, -1],
-				header: 'TODO',
-				description: 'TOOD',
+				combinations: [[-1, -1, -1]],
+				header: 'ZERO',
+				description: 'ZERO',
 			},
 		],
 	},
@@ -43,7 +43,7 @@ export const availableCategories: Category[] = [
 		results: [
 			{
 				id: 1,
-				combination: [-1, -1, -1],
+				combinations: [[-1, -1, -1]],
 				header: 'TODO',
 				description: 'TOOD',
 			},
@@ -63,7 +63,7 @@ export const availableCategories: Category[] = [
 		results: [
 			{
 				id: 1,
-				combination: [-1, -1, -1],
+				combinations: [[-1, -1, -1]],
 				header: 'TODO',
 				description: 'TOOD',
 			},
@@ -83,7 +83,7 @@ export const availableCategories: Category[] = [
 		results: [
 			{
 				id: 1,
-				combination: [-1, -1, -1],
+				combinations: [[-1, -1, -1]],
 				header: 'TODO',
 				description: 'TOOD',
 			},
@@ -99,7 +99,7 @@ export const availableCategories: Category[] = [
 		results: [
 			{
 				id: 1,
-				combination: [-1, -1, -1],
+				combinations: [[-1, -1, -1]],
 				header: 'TODO',
 				description: 'TOOD',
 			},
@@ -115,7 +115,7 @@ export const availableCategories: Category[] = [
 		results: [
 			{
 				id: 1,
-				combination: [-1, -1, -1],
+				combinations: [[-1, -1, -1]],
 				header: 'TODO',
 				description: 'TOOD',
 			},
@@ -131,7 +131,7 @@ export const availableCategories: Category[] = [
 		results: [
 			{
 				id: 1,
-				combination: [-1, -1, -1],
+				combinations: [[-1, -1, -1]],
 				header: 'TODO',
 				description: 'TOOD',
 			},
@@ -147,7 +147,7 @@ export const availableCategories: Category[] = [
 		results: [
 			{
 				id: 1,
-				combination: [-1, -1, -1],
+				combinations: [[-1, -1, -1]],
 				header: 'TODO',
 				description: 'TOOD',
 			},
@@ -163,9 +163,9 @@ export const availableCategories: Category[] = [
 		results: [
 			{
 				id: 1,
-				combination: [-1, -1, -1],
-				header: 'TODO',
-				description: 'TOOD',
+				combinations: [[0, 0, 0], [1, 0, 0]],
+				header: 'All zeros',
+				description: 'Or first is one',
 			},
 		],
 	},
