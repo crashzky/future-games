@@ -7,7 +7,15 @@ import { matchAnswers } from '../shared/utils';
 export const useStore = create<IGameState>((set) => ({
 	selectedAnswers: [],
 	currentResult: undefined,
-	selectedCategory: { backgroundStyle: undefined, value: undefined, link: undefined, quiz: [], results: [] },
+	selectedCategory: {
+		backgroundStyle: undefined,
+		value: undefined,
+		link: undefined,
+		quiz: [],
+		results: [],
+		description: '',
+		idea: '',
+	},
 	selectCategory: (category: Category) => set(() => ({ selectedCategory: category })),
 	updateAnswers: (selectedAnswer: SelectedAnswer) => set((state) => {
 		let answers = [];
