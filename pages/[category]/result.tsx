@@ -18,7 +18,7 @@ const ContestResultPage = ({ category }: Props): JSX.Element => {
 		<ContestLayout backgroundColor={selectedCategory.backgroundStyle} label={selectedCategory.value}>
 			{result ? (
 				<div>
-					<h1 className='hidden md:block text-center text-2xl'>
+					<h1 className='hidden w-full md:block text-center text-2xl'>
 						{selectedCategory.value}
 					</h1>
 					<div className='scale-80 md:scale-100 w-52 h-52 bg-gray-400 mx-auto mt-4 md:mt-8'>
