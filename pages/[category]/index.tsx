@@ -45,7 +45,7 @@ const ContestPage = ({ category }: Props): JSX.Element => {
 		<ContestLayout backgroundColor={selectedCategoryFromLink.backgroundStyle} label={selectedCategoryFromLink.value}>
 			<div className='grid grid-flow-col'>
 				<img src='/arrow.svg' alt='arrow' />
-				<h1 className='text-2xl inline-block w-96 text-center'>
+				<h1 className='text-2xl inline-block w-full sm:w-96 text-center'>
 					{selectedCategoryFromLink.value}
 				</h1>
 			</div>
