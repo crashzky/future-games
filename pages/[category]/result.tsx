@@ -37,32 +37,34 @@ const ContestResultPage = ({ category }: Props): JSX.Element => {
 					<p className='mt-8 text-center md:text-xl'>
 						Подедиться в соцсетях:
 					</p>
-					<div className='w-fit mt-3 mx-auto'>
-						<VKShareButton
-							title='Игра-квест от кружкового движения'
-							url='https://future-games.online/'
-						>
-							<img src='/vk.svg' className='mr-6' alt={'vk'} />
-						</VKShareButton>
-						<FacebookShareButton
-							quote='Игра-квест от кружкового движения'
-							url='https://future-games.online/'
-						>
-							<img src='/facebook.svg' className='mr-6' alt='facebook' />
-						</FacebookShareButton>
-						<TwitterShareButton
-							title='Игра-квест от кружкового движения'
-							url='https://future-games.online/'
-						>
-							<img src='/twitter.svg' className='mr-6' alt='facebook' />
-						</TwitterShareButton>
-						<TelegramShareButton
-							title='Игра-квест от кружкового движения'
-							url='https://future-games.online/'
-						>
-							<img src='/telegram.svg' alt='telegram' />
-						</TelegramShareButton>
-					</div>
+					{typeof window !== 'undefined' && (
+						<div className='w-fit mt-3 mx-auto'>
+							<VKShareButton
+								title='Игра-квест от кружкового движения'
+								url={window.location.href}
+							>
+								<img src='/vk.svg' className='mr-6' alt={'vk'} />
+							</VKShareButton>
+							<FacebookShareButton
+								quote='Игра-квест от кружкового движения'
+								url={window.location.href}
+							>
+								<img src='/facebook.svg' className='mr-6' alt='facebook' />
+							</FacebookShareButton>
+							<TwitterShareButton
+								title='Игра-квест от кружкового движения'
+								url={window.location.href}
+							>
+								<img src='/twitter.svg' className='mr-6' alt='facebook' />
+							</TwitterShareButton>
+							<TelegramShareButton
+								title='Игра-квест от кружкового движения'
+								url={window.location.href}
+							>
+								<img src='/telegram.svg' alt='telegram' />
+							</TelegramShareButton>
+						</div>
+					)}
 				</div>
 			) : (
 				<p className='font-bold text-xl md:text-2xl mt-8'>
