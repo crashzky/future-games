@@ -19,7 +19,8 @@ export const matchAnswers = (answers: number[], category: Category): Result => {
 		const result = availableResults[i];
 		const combinations = result.combinations;
 		for (let j=0; j<combinations.length; j++) {
-			if (areArraysSame(answers, combinations[j]))
+			const correctAnswersIndex = answers.map((item) => item + 1);
+			if (areArraysSame(correctAnswersIndex, combinations[j]))
 				return result;
 		}
 	}
