@@ -6,11 +6,11 @@ const MyApp = ({ Component, pageProps }: Props): JSX.Element => {
 	return (
 		<div>
 			<Head>
-				<YMInitializer accounts={[86857054]} options={{ webvisor: true }} />
 				<title>
 					Игра-квест от кружкового движения
 				</title>
 			</Head>
+			<YMInitializer accounts={[86857054]} options={{ webvisor: true }} />
 			<Component {...pageProps} />
 		</div>
 	);
