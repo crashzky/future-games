@@ -112,7 +112,8 @@ const MainPage = (): JSX.Element => {
 					<Button
 						variant={isCategorySelected() ? 'enabled' : 'disabled'}
 						label='Вперед!'
-						onClick={onClickNext} />
+						onClick={onClickNext}
+						className={isCategorySelected() ? selectedCategory.backgroundStyle : 'bg-blue-1'} />
 				</div>
 				<p className='mt-3 text-sm text-gray-400 text-center'>
 					{getCurrentCategoryLabel()}

@@ -32,7 +32,11 @@ const ContestResultPage = ({ category }: Props): JSX.Element => {
 					</p>
 					<div className='mt-8 grid grid-cols-2 gap-4'>
 						<Button label='Переиграть' variant='outlined' onClick={() => push('/' + selectedCategory.link)} />
-						<Button label='Выбрать другой кейс' variant='enabled' onClick={() => push('/')} />
+						<Button
+							label='Выбрать другой кейс'
+							variant='enabled'
+							onClick={() => push('/')}
+							className={selectedCategory.backgroundStyle} />
 					</div>
 					<p className='mt-8 text-center md:text-xl'>
 						Подедиться в соцсетях:

@@ -24,6 +24,14 @@ module.exports = {
 			},
 			colors: {
 				'custom-blue': '#2C5EF6',
+				'red-1': '#D56E72',
+				'blue-1': '#0D42FF',
+				'purple-1': '#8A77CB',
+				'green-1': '#4AA0BA',
+				'pink-1': '#D56ECB',
+				'yellow-1': '#CB8B77',
+				'blue-2': '#0DA8FF',
+				'red-2': '#BA4A4A',
 			},
 		},
 		scale: {

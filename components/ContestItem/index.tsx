@@ -13,6 +13,7 @@ const ContestItem = ({
 	disabled,
 	onClick,
 	className = '',
+	buttonStyle,
 	...props
 }: Props): JSX.Element => {
 	const [selectedIndex, setSelectedIndex] = useState<number>();
@@ -84,6 +85,7 @@ const ContestItem = ({
 						<Button
 							variant='enabled'
 							label='Да'
+							className={buttonStyle}
 							onClick={() => {
 								onClick();
 								setClicked(true);
@@ -92,7 +94,7 @@ const ContestItem = ({
 				</>
 			) : (
 				<Button
-					className='mt-11'
+					className={'mt-11 ' + (selectedIndex !== undefined && buttonStyle)}
 					label='Подтвердить'
 					variant={selectedIndex !== undefined ? 'enabled' : 'disabled'}
 					onClick={() => {

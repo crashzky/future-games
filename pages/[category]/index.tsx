@@ -65,7 +65,8 @@ const ContestPage = ({ category }: Props): JSX.Element => {
 							count={quiz.length}
 							question={question}
 							onClick={() => handleClickNext(key)}
-							disabled={currentActive < key} />
+							disabled={currentActive < key}
+							buttonStyle={selectedCategoryFromLink.backgroundStyle} />
 					);
 				})}
 			</div>

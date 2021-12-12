@@ -7,6 +7,7 @@ interface Props extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDi
 	question: Question;
 	onClick: () => void;
 	disabled?: boolean;
+	buttonStyle: string;
 }
 
 export default Props;
