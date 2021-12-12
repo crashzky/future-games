@@ -11,7 +11,7 @@ class MyDocument extends Document {
 		return (
 			<Html lang='ru'>
 				<Head />
-				<YMInitializer accounts={[86857054]} />
+				<YMInitializer accounts={[86857054]} options={{ webvisor: true }} />
 				<body>
 					<Main />
 					<NextScript />
