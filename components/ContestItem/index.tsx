@@ -22,11 +22,13 @@ const ContestItem = ({
 	const updateAnswers = useStore((state) => state.updateAnswers);
 
 	const onItemPress = (index): void => {
-		updateAnswers({
-			questionId: question.id,
-			answerId: index,
-		});
-		setSelectedIndex(index);
+		if(!clicked) {
+			updateAnswers({
+				questionId: question.id,
+				answerId: index,
+			});
+			setSelectedIndex(index);
+		}
 	};
 
 	return (
@@ -61,7 +63,7 @@ const ContestItem = ({
 					</React.Fragment>
 				))}
 			</div>
-			{watchCheckMenu && selectedIndex !== undefined ? (
+			{(watchCheckMenu && selectedIndex !== undefined) && (
 				<>
 					<h3 className='font-bold text-center mt-11'>
 						{question.answers[selectedIndex].titleOnSelect}
@@ -89,10 +91,12 @@ const ContestItem = ({
 							onClick={() => {
 								onClick();
 								setClicked(true);
+								setWatchCheckMenu(false);
 							}} />
 					</div>
 				</>
-			) : (
+			)}
+			{!clicked && (!watchCheckMenu || selectedIndex === undefined) && (
 				<Button
 					className={'mt-11 ' + (selectedIndex !== undefined && buttonStyle)}
 					label='Подтвердить'

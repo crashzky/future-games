@@ -5,6 +5,7 @@ import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
 import { availableCategories } from '../../shared/categories';
 import { useRouter } from 'next/router';
 import { useStore } from '../../hooks/useStore';
+import Link from 'next/link';
 
 const ContestPage = ({ category }: Props): JSX.Element => {
 	const [currentActive, setCurrentActive] = useState(0);
@@ -44,7 +45,9 @@ const ContestPage = ({ category }: Props): JSX.Element => {
 	return (
 		<ContestLayout backgroundColor={selectedCategoryFromLink.backgroundStyle} label={selectedCategoryFromLink.value}>
 			<div className='grid grid-flow-col'>
-				<img src='/arrow.svg' alt='arrow' />
+				<Link href='/'>
+					<img className='cursor-pointer' src='/arrow.svg' alt='arrow' />
+				</Link>
 				<h1 className='text-2xl inline-block w-full sm:w-96 text-center'>
 					{selectedCategoryFromLink.value}
 				</h1>
