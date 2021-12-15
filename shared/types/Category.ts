@@ -10,4 +10,5 @@ export interface Category {
     backgroundStyle: string;
     quiz: Question[];
     results: Result[];
+	image: string;
 }

@@ -56,7 +56,7 @@ const ContestItem = ({
 							<h3 className='font-black text-left'>
 								{i.title}
 							</h3>
-							<p className='font-light text-xs mt-1 text-left'>
+							<p className='font-light text-sm mt-1 text-left'>
 								{i.description}
 							</p>
 						</button>

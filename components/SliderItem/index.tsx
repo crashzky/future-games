@@ -9,6 +9,7 @@ const SliderItem = ({
 	height,
 	className = '',
 	onClick,
+	image,
 	...props
 }: Props): JSX.Element => {
 	const padding: number = 88;
@@ -32,9 +33,10 @@ const SliderItem = ({
 				(e.target as any).blur();
 				onClick(e);
 			}}
-			className={`${className} ${backgroundColor} ${getBorderStyle()} flex items-end p-5`}
+			className={`${className} ${backgroundColor} ${getBorderStyle()} flex items-end relative p-5`}
 			{...props}
 		>
+			<img src={image} className='w-36 absolute right-2 top-2' />
 			<p className='font-black text-2xl text-left'>
 				{label}
 			</p>

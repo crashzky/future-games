@@ -7,6 +7,7 @@ import { useRouter } from 'next/router';
 import { Result } from '../../shared/types/Result';
 import { Category } from '../../shared/types/Category';
 import Button from '../../components/Button';
+import Image from 'next/image';
 
 const ContestResultPage = ({ category }: Props): JSX.Element => {
 	const { query, push } = useRouter();
@@ -21,10 +22,14 @@ const ContestResultPage = ({ category }: Props): JSX.Element => {
 					<h1 className='hidden w-full md:block text-center text-2xl'>
 						{selectedCategory.value}
 					</h1>
-					<div className='scale-80 md:scale-100 w-52 h-52 bg-gray-400 mx-auto mt-4 md:mt-8'>
-
+					<div className='mx-auto w-fit'>
+						<Image
+							className='scale-80 md:scale-100 mt-4 md:mt-8'
+							src={selectedCategory.image}
+							width={204}
+							height={204} />
 					</div>
-					<p className='font-bold text-xl md:text-2xl mt-8'>
+					<p className='font-bold text-xl md:text-2xl'>
 						{result.header}
 					</p>
 					<p className='md:text-xl mt-6'>

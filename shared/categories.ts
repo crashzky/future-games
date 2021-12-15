@@ -22,6 +22,7 @@ export const availableCategories: Category[] = [
 		appeal: 'Помоги людям справиться со стрессом в Городе практик будущего',
 		backgroundStyle: 'bg-red-1',
 		quiz: HappinessAndHealth,
+		image: '/love.png',
 		results: [
 			{
 				id: 1,
@@ -72,6 +73,7 @@ export const availableCategories: Category[] = [
 		idea: 'Создать проект энергосистемы, который позволит обеспечивать жителей города экологичной и надежной, бесперебойной энергией.',
 		appeal: 'Создай свой проект энергосистемы в Городе Практик Будущего',
 		quiz: CityPowerSupply,
+		image: '/energy.png',
 		results: [
 			{
 				id: 1,
@@ -113,6 +115,7 @@ export const availableCategories: Category[] = [
 		appeal: 'Помоги молодым людям определиться с будущей профессией в Городе практик будущего',
 		backgroundStyle: 'bg-purple-1',
 		quiz: CareerGuidanceForYoung,
+		image: '/books.png',
 		results: [
 			{
 				id: 1,
@@ -162,6 +165,7 @@ export const availableCategories: Category[] = [
 		idea: 'Реализуйте проект, который будет удовлетворять особые потребности пожилых людей и обеспечивать им полноту жизни.',
 		appeal: 'Позаботься о старшем поколении в Городе практик будущего',
 		quiz: CareAboutOlderGeneration,
+		image: '/stick.png',
 		results: [
 			{
 				id: 1,
@@ -209,6 +213,7 @@ export const availableCategories: Category[] = [
 		appeal: 'Создай свою среду доступных возможностей в Городе практик будущего',
 		backgroundStyle: 'bg-pink-1',
 		quiz: AvailableOptions,
+		image: '/hand.png',
 		results: [
 			{
 				id: 1,
@@ -263,6 +268,7 @@ export const availableCategories: Category[] = [
 		appeal: 'Создай свой дом будущего в Городе практик будущего',
 		backgroundStyle: 'bg-yellow-1',
 		quiz: LivingSpaceTransformation,
+		image: '/house.png',
 		results: [
 			{
 				id: 1,
@@ -324,6 +330,7 @@ export const availableCategories: Category[] = [
 		appeal: 'Создай сельское хозяйство будущего в Городе практик будущего',
 		backgroundStyle: 'bg-blue-400',
 		quiz: FoodProduction,
+		image: '/carrot.png',
 		results: [
 			{
 				id: 1,
@@ -377,6 +384,7 @@ export const availableCategories: Category[] = [
 		appeal: 'Реши, какими будут трудовые отношения с роботами в Городе Практик Будущего',
 		backgroundStyle: 'bg-red-2',
 		quiz: WorkDivision,
+		image: '/robot.png',
 		results: [
 			{
 				id: 1,

@@ -6,6 +6,7 @@ interface Props extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement
 	selected?: boolean;
 	width?: number;
 	height?: number;
+	image: string;
 }
 
 export default Props;

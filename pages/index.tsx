@@ -54,22 +54,24 @@ const MainPage = (): JSX.Element => {
 				ref={containerRef as any}
 			>
 				<h1 className='font-bold font-benzin text-2xl text-center mt-8 md:mt-0'>
-					Игра-квест от кружкового движения
+					Город практик будущего
 				</h1>
 				<div className='px-4 md:px-0'>
 					<p className='mt-8 pt-0.5'>
-						Мы в практиках будущего каждый день занимаемся решением проблем.
+						Познакомьтесь с примерами социального и технологического предпринимательства,
+						которые уже сейчас могут изменить образ жизни людей, а в будущем — стать распространенной практикой.
 					</p>
 					<p className='mt-4'>
-						Пройдите наш тест и попробуйте решить одну из таких проблем!
-						Тут надо сказать что-то еще, потому что игра настолько крутая, что нужно говорить
-						очень много и по делу! Так что давайте представим, что тут я написал, ок?
+						Выберите практику и ответьте на три вопроса о ней. Каждый вопрос поможет вам лучше разобраться
+						в технологиях, их влиянии на человека и общество.
 					</p>
 					<p className='mt-4'>
-						(тесты можно проходить несколько раз)
+						В этой игре нет правильных или неправильных ответов, есть только ваши выборы.
+						Выбирайте те ответы, которые вам сейчас ближе, или наоборот те, в которых хотите разобраться,
+						узнавайте о них больше и принимайте решения. Вы всегда можете передумать или пройти игру заново. 
 					</p>
 					<h2 className='mt-12 pt-0.5 font-black text-2xl'>
-						Выберите один из актуальных кейсов
+						Выберите одну из практик
 					</h2>
 				</div>
 				{/*Mobile slider*/}
@@ -87,7 +89,8 @@ const MainPage = (): JSX.Element => {
 										backgroundColor={category.backgroundStyle}
 										label={category.value}
 										onClick={() => selectCategory(category)}
-										selected={selectedCategory.value === category.value} />
+										selected={selectedCategory.value === category.value}
+										image={category.image} />
 								</SwiperSlide>
 							);
 						})}
@@ -104,7 +107,8 @@ const MainPage = (): JSX.Element => {
 								backgroundColor={category.backgroundStyle}
 								label={category.value}
 								onClick={() => selectCategory(category)}
-								selected={selectedCategory.value === category.value} />
+								selected={selectedCategory.value === category.value}
+								image={category.image} />
 						);
 					})}
 				</div>
