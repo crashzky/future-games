@@ -44,25 +44,25 @@ const ContestResultPage = ({ category }: Props): JSX.Element => {
 					{typeof window !== 'undefined' && (
 						<div className='w-fit mt-3 mx-auto'>
 							<VKShareButton
-								title='Игра-квест от кружкового движения'
+								title={selectedCategory.appeal}
 								url={window.location.href}
 							>
 								<img src='/vk.svg' className='mr-6' alt={'vk'} />
 							</VKShareButton>
 							<FacebookShareButton
-								quote='Игра-квест от кружкового движения'
+								quote={selectedCategory.appeal}
 								url={window.location.href}
 							>
 								<img src='/facebook.svg' className='mr-6' alt='facebook' />
 							</FacebookShareButton>
 							<TwitterShareButton
-								title='Игра-квест от кружкового движения'
+								title={selectedCategory.appeal + '\n\nИгра-квест от кружкового движения'}
 								url={window.location.href}
 							>
 								<img src='/twitter.svg' className='mr-6' alt='facebook' />
 							</TwitterShareButton>
 							<TelegramShareButton
-								title='Игра-квест от кружкового движения'
+								title={selectedCategory.appeal + '\n\nИгра-квест от кружкового движения'}
 								url={window.location.href}
 							>
 								<img src='/telegram.svg' alt='telegram' />

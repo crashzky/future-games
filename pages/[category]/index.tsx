@@ -44,7 +44,7 @@ const ContestPage = ({ category }: Props): JSX.Element => {
 
 	return (
 		<ContestLayout backgroundColor={selectedCategoryFromLink.backgroundStyle} label={selectedCategoryFromLink.value}>
-			<div className='grid grid-flow-col'>
+			<div className='hidden md:grid grid-flow-col'>
 				<Link href='/'>
 					<img className='cursor-pointer' src='/arrow.svg' alt='arrow' />
 				</Link>

@@ -1,5 +1,6 @@
 import Footer from '../Footer';
 import Props from './Contest.props';
+import Link from 'next/link';
 
 import styles from './Contest.module.scss';
 import Header from '../Main/Header';
@@ -7,9 +8,14 @@ import Header from '../Main/Header';
 const ContestLayout = ({ backgroundColor, label, children }: Props): JSX.Element => {
 	return (
 		<div className={backgroundColor}>
-			<h1 className='md:hidden font-black text-xl mx-7 py-5'>
-				{label}
-			</h1>
+			<div className='ml-8 md:hidden'>
+				<Link href='/'>
+					<img className='inline-block cursor-pointer' src='/arrow.svg' alt='arrow' />
+				</Link>
+				<h1 className='inline-block font-black text-xl mx-7 py-5'>
+					{label}
+				</h1>
+			</div>
 			<Header variant='hiddenMobile' />
 			<div
 				className={

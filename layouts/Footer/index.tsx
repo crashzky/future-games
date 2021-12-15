@@ -6,7 +6,7 @@ const Footer = ({ variant }: Props): JSX.Element => {
 		<footer className={getFooterStyles(variant)}>
 			{/*Команда mobile*/}
 			<a
-				href='#'
+				href='/about'
 				className='block md:hidden font-bold font-benzin underline text-center'
 			>
 				О проекте
@@ -20,7 +20,7 @@ const Footer = ({ variant }: Props): JSX.Element => {
 			{/*Команда desktop*/}
 			<div>
 				<a
-					href='#'
+					href='/about'
 					className='hidden md:block md:mt-8 md:mb-2 font-bold font-benzin text-2xl underline text-center'
 				>
 					О проекте
