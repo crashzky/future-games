@@ -7,7 +7,7 @@ const MyApp = ({ Component, pageProps }: Props): JSX.Element => {
 		<div>
 			<Head>
 				<title>
-					Игра-квест от кружкового движения
+					Город практик будущего
 				</title>
 			</Head>
 			<YMInitializer accounts={[86857054]} options={{ webvisor: true }} />
