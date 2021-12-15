@@ -25,7 +25,7 @@ const ContestResultPage = ({ category }: Props): JSX.Element => {
 					<div className='mx-auto w-fit'>
 						<Image
 							className='scale-80 md:scale-100 mt-4 md:mt-8'
-							src={selectedCategory.image}
+							src={selectedCategory.resultImage}
 							width={204}
 							height={204} />
 					</div>

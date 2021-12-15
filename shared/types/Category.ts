@@ -11,4 +11,5 @@ export interface Category {
     quiz: Question[];
     results: Result[];
 	image: string;
+	resultImage: string;
 }

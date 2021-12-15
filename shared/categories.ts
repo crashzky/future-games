@@ -23,6 +23,7 @@ export const availableCategories: Category[] = [
 		backgroundStyle: 'bg-red-1',
 		quiz: HappinessAndHealth,
 		image: '/love.png',
+		resultImage: '/love_result.png',
 		results: [
 			{
 				id: 1,
@@ -74,6 +75,7 @@ export const availableCategories: Category[] = [
 		appeal: 'Создай свой проект энергосистемы в Городе Практик Будущего',
 		quiz: CityPowerSupply,
 		image: '/energy.png',
+		resultImage: '/energy_result.png',
 		results: [
 			{
 				id: 1,
@@ -116,6 +118,7 @@ export const availableCategories: Category[] = [
 		backgroundStyle: 'bg-purple-1',
 		quiz: CareerGuidanceForYoung,
 		image: '/books.png',
+		resultImage: '/books_result.png',
 		results: [
 			{
 				id: 1,
@@ -166,6 +169,7 @@ export const availableCategories: Category[] = [
 		appeal: 'Позаботься о старшем поколении в Городе практик будущего',
 		quiz: CareAboutOlderGeneration,
 		image: '/stick.png',
+		resultImage: '/stick_result.png',
 		results: [
 			{
 				id: 1,
@@ -214,6 +218,7 @@ export const availableCategories: Category[] = [
 		backgroundStyle: 'bg-pink-1',
 		quiz: AvailableOptions,
 		image: '/hand.png',
+		resultImage: '/hand_result.png',
 		results: [
 			{
 				id: 1,
@@ -269,6 +274,7 @@ export const availableCategories: Category[] = [
 		backgroundStyle: 'bg-yellow-1',
 		quiz: LivingSpaceTransformation,
 		image: '/house.png',
+		resultImage: '/house_result.png',
 		results: [
 			{
 				id: 1,
@@ -331,6 +337,7 @@ export const availableCategories: Category[] = [
 		backgroundStyle: 'bg-blue-400',
 		quiz: FoodProduction,
 		image: '/carrot.png',
+		resultImage: '/carrot_result.png',
 		results: [
 			{
 				id: 1,
@@ -385,6 +392,7 @@ export const availableCategories: Category[] = [
 		backgroundStyle: 'bg-red-2',
 		quiz: WorkDivision,
 		image: '/robot.png',
+		resultImage: '/robot_result.png',
 		results: [
 			{
 				id: 1,
