@@ -1,4 +1,3 @@
-import { CheckCircle, Circle } from 'lucide-react';
 import Props from './ContestItem.props';
 import React from 'react';
 import styles from './ContestItem.module.scss';
@@ -47,9 +46,9 @@ const ContestItem = ({
 					<React.Fragment key={num}>
 						<button key={num + '_circle'} className='h-4' onClick={() => onItemPress(num)}>
 							{selectedIndex === num ? (
-								<CheckCircle color='white' size={16} />
+								<img src='/circle_active.svg' alt='radio' />
 							) : (
-								<Circle color='white' size={16} />
+								<img src='/circle.svg' alt='radio' />
 							)}
 						</button>
 						<button key={num + '_div'} onClick={() => onItemPress(num)}>
