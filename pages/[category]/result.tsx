@@ -44,7 +44,7 @@ const ContestResultPage = ({ category }: Props): JSX.Element => {
 							className={selectedCategory.backgroundStyle} />
 					</div>
 					<p className='mt-8 text-center md:text-xl'>
-						Подедиться в соцсетях:
+						Поделиться в соцсетях:
 					</p>
 					{typeof window !== 'undefined' && (
 						<div className='w-fit mt-3 mx-auto'>
