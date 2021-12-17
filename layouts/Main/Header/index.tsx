@@ -1,15 +1,14 @@
-import Props from './Header.props';
-import { getHeaderStyles } from './Header.style';
+import { Menu } from 'lucide-react';
 
-const Header = ({ variant }: Props): JSX.Element => {
+const Header = (): JSX.Element => {
 	return (
-		<header className={getHeaderStyles(variant)}>
-			<a
-				className='md:my-8 text-white font-bold font-benzin md:text-2xl inline-block'
-				href='/'
-			>
-				Город практик будущего
-			</a>
+		<header className='flex sticky top-0 bg-black'>
+			<button className='w-12 h-12 p-3'>
+				<Menu color='white' />
+			</button>
+			<div className='bg-white w-full h-full text-right text-black py-3.5 pr-4 font-bold'>
+				Альманах практик будущего
+			</div>
 		</header>
 	);
 };

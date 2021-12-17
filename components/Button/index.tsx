@@ -6,7 +6,7 @@ const Button = ({ label, variant, className = '', ...props }: Props): JSX.Elemen
 			case 'disabled':
 				return 'bg-gray-700 text-gray-500 rounded-sm';
 			case 'enabled':
-				return 'rounded-sm';
+				return 'bg-blue-700 rounded-sm';
 			case 'outlined':
 				return 'bg-black rounded-sm border-gray-200 border-2';
 		}

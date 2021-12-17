@@ -1,6 +1,4 @@
 .container {
-	@media screen and (max-width: 699px) {
-		display: grid;
-		grid-template-rows: 1fr 355px;
-	}
+	display: grid;
+	grid-template-rows: 1fr 355px;
 }

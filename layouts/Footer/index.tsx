@@ -1,44 +1,24 @@
-import Props from './Footer.props';
-import getFooterStyles from './Footer.styles';
+import { ArrowUp } from 'lucide-react';
 
-const Footer = ({ variant }: Props): JSX.Element => {
+const Footer = (): JSX.Element => {
 	return (
-		<footer className={getFooterStyles(variant)}>
-			{/*Команда mobile*/}
-			<a
-				href='/about'
-				className='block md:hidden font-bold font-benzin underline text-center'
-			>
-				О проекте
+		<div className='my-11'>
+			<p className='font-medium text-center'>
+				Команда
+			</p>
+			<p className='font-medium text-center mt-7'>
+				©
+				{' ' + new Date(Date.now()).getFullYear() + ' '}
+				<span className='text-blue-600'>
+					Кружковое движение
+				</span>
+			</p>
+			<a className='font-medium mt-6 text-center block' href='#topBlock'>
+				Перейти в начало страницы
+				{' '}
+				<ArrowUp color='white' className='inline' />
 			</a>
-			<a href='https://kruzhok.org'>
-				<img
-					src='/kruzhok.png'
-					alt='Kruzhok'
-					className='mx-auto scale-60 md:scale-100 my-6 md:my-10' />
-			</a>
-			{/*Команда desktop*/}
-			<div>
-				<a
-					href='/about'
-					className='hidden md:block md:mt-8 md:mb-2 font-bold font-benzin text-2xl underline text-center'
-				>
-					О проекте
-				</a>
-				<a
-					href='https://almanac.kruzhok.org/'
-					className='hidden md:block font-semibold text-custom-blue'
-				>
-					Альманах практик будущего
-				</a>
-			</div>
-			<a href='https://президентскиегранты.рф'>
-				<img
-					src='/fund_grants.png'
-					alt='Founf grants'
-					className='mx-auto scale-70 md:scale-100 mb-6 md:my-8 block' />
-			</a>
-		</footer>
+		</div>
 	);
 };
 

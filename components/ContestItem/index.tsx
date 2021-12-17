@@ -1,34 +1,23 @@
+import { CheckCircle, Circle } from 'lucide-react';
 import Props from './ContestItem.props';
-import React from 'react';
+
 import styles from './ContestItem.module.scss';
 import Button from '../Button';
 import { useState } from 'react';
-import { useStore } from '../../hooks/useStore';
 
 const ContestItem = ({
 	currentNumber,
 	count,
-	question,
+	answers,
 	disabled,
 	onClick,
+	title,
 	className = '',
-	buttonStyle,
 	...props
 }: Props): JSX.Element => {
-	const [selectedIndex, setSelectedIndex] = useState<number>();
+	const [selected, setSelected] = useState<number>();
 	const [watchCheckMenu, setWatchCheckMenu] = useState(false);
 	const [clicked, setClicked] = useState(false);
-	const updateAnswers = useStore((state) => state.updateAnswers);
-
-	const onItemPress = (index): void => {
-		if(!clicked) {
-			updateAnswers({
-				questionId: question.id,
-				answerId: index,
-			});
-			setSelectedIndex(index);
-		}
-	};
 
 	return (
 		<div className={className + ' relative'} {...props}>
@@ -39,36 +28,37 @@ const ContestItem = ({
 				{currentNumber + ' / ' + count}
 			</p>
 			<h2 className='font-bold text-center mt-4 mx-4'>
-				{question.title}
+				{title}
 			</h2>
 			<div className={styles['grid-columns'] + ' mt-6 grid gap-x-3 gap-y-5'}>
-				{question.answers.map((i, num) => (
-					<React.Fragment key={num}>
-						<button key={num + '_circle'} className='h-4' onClick={() => onItemPress(num)}>
-							{selectedIndex === num ? (
-								<img src='/circle_active.svg' alt='radio' />
+				{answers.map((i, num) => (
+					// TODO each child in a list should have a unique "key" prop
+					<>
+						<button key={num + '_circle'} className='h-4' onClick={() => setSelected(num)}>
+							{selected === num ? (
+								<CheckCircle color='white' size={16} />
 							) : (
-								<img src='/circle.svg' alt='radio' />
+								<Circle color='white' size={16} />
 							)}
 						</button>
-						<button key={num + '_div'} onClick={() => onItemPress(num)}>
+						<button key={num + '_div'} onClick={() => setSelected(num)}>
 							<h3 className='font-black text-left'>
 								{i.title}
 							</h3>
-							<p className='font-light text-sm mt-1 text-left'>
+							<p className='font-light text-xs mt-1 text-left'>
 								{i.description}
 							</p>
 						</button>
-					</React.Fragment>
+					</>
 				))}
 			</div>
-			{(watchCheckMenu && selectedIndex !== undefined) && (
+			{watchCheckMenu && selected !== undefined ? (
 				<>
 					<h3 className='font-bold text-center mt-11'>
-						{question.answers[selectedIndex].titleOnSelect}
+						{answers[selected].titleOnSelect}
 					</h3>
 					<p className='text-sm text-center mt-2'>
-						{question.answers[selectedIndex].objection}
+						{answers[selected].descriptionOnSelect}
 					</p>
 					<div className='grid grid-cols-2 gap-4 mt-7'>
 						<Button
@@ -86,20 +76,17 @@ const ContestItem = ({
 						<Button
 							variant='enabled'
 							label='Да'
-							className={buttonStyle}
 							onClick={() => {
 								onClick();
 								setClicked(true);
-								setWatchCheckMenu(false);
 							}} />
 					</div>
 				</>
-			)}
-			{!clicked && (!watchCheckMenu || selectedIndex === undefined) && (
+			) : (
 				<Button
-					className={'mt-11 ' + (selectedIndex !== undefined && buttonStyle)}
+					className='mt-11'
 					label='Подтвердить'
-					variant={selectedIndex !== undefined ? 'enabled' : 'disabled'}
+					variant={selected !== undefined ? 'enabled' : 'disabled'}
 					onClick={() => {
 						setWatchCheckMenu(true);
 						window.scrollBy({

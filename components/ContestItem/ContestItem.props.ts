@@ -1,13 +1,13 @@
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
-import { Question } from '../../shared/types/Question';
+import { Answer } from '../../shared/types/Answer';
 
 interface Props extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
 	currentNumber: number;
 	count: number;
-	question: Question;
+	title: string;
+	answers: Answer[];
 	onClick: () => void;
 	disabled?: boolean;
-	buttonStyle: string;
 }
 
 export default Props;

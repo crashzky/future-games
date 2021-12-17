@@ -7,11 +7,11 @@ import Footer from '../Footer';
 const MainLayout = ({ children }: Props): JSX.Element => {
 	return (
 		<div className={styles.main} id='topBlock'>
-			<Header variant='showMobile' />
+			<Header />
 			<main>
 				{children}
 			</main>
-			<Footer variant='showAll' />
+			<Footer />
 		</div>
 	);
 };
