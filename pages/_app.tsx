@@ -9,6 +9,7 @@ const MyApp = ({ Component, pageProps }: Props): JSX.Element => {
 				<title>
 					Город практик будущего
 				</title>
+				<link rel='icon' href='/favicon.ico' type='image/x-icon' />
 			</Head>
 			<YMInitializer accounts={[86930852]} options={{ webvisor: true }} />
 			<Component {...pageProps} />
