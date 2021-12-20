@@ -10,7 +10,7 @@ const MyApp = ({ Component, pageProps }: Props): JSX.Element => {
 					Город практик будущего
 				</title>
 			</Head>
-			<YMInitializer accounts={[86857054]} options={{ webvisor: true }} />
+			<YMInitializer accounts={[86930852]} options={{ webvisor: true }} />
 			<Component {...pageProps} />
 		</div>
 	);
