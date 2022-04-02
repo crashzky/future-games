@@ -32,7 +32,7 @@ const AboutPage = (): JSX.Element => {
 					<p className='mt-4'>
 						С результатами международного исследования, другими играми и разработками можно ознакомиться на сайте
 						{' '}
-						<Link href='https://almanac.kruzhok.org/'>
+						<Link href='https://future-almanac.com/ru/'>
 							<a className='text-custom-blue'>
 								Альманаха практик будущего.
 							</a>

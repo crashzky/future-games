@@ -26,7 +26,7 @@ const Footer = ({ variant }: Props): JSX.Element => {
 					О проекте
 				</a>
 				<a
-					href='https://almanac.kruzhok.org/'
+					href='https://future-almanac.com/ru/'
 					className='hidden md:block font-semibold text-custom-blue'
 				>
 					Альманах практик будущего
