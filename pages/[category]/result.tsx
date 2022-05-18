@@ -2,7 +2,7 @@ import React from 'react';
 import ContestLayout from '../../layouts/Contest';
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
 import { availableCategories } from '../../shared/categories';
-import { TelegramShareButton, TwitterShareButton, VKShareButton } from 'react-share';
+import { TelegramShareButton, VKShareButton } from 'react-share';
 import { useRouter } from 'next/router';
 import { Result } from '../../shared/types/Result';
 import { Category } from '../../shared/types/Category';
@@ -60,12 +60,12 @@ const ContestResultPage = ({ category }: Props): JSX.Element => {
 							>
 								<img src='/facebook.svg' className='mr-6' alt='facebook' />
 							</FacebookShareButton>*/}
-							<TwitterShareButton
+							{/*<TwitterShareButton
 								title={selectedCategory.appeal + '\n\nИгра-квест от кружкового движения'}
 								url={window.location.href}
 							>
 								<img src='/twitter.svg' className='mr-6' alt='facebook' />
-							</TwitterShareButton>
+							</TwitterShareButton>*/}
 							<TelegramShareButton
 								title={selectedCategory.appeal + '\n\nИгра-квест от кружкового движения'}
 								url={window.location.href}
